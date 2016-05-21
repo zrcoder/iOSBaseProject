@@ -2,4 +2,4 @@ When start a project, there are some base works to do, such as encapsulation of 
 
 Welcome to add your codes!
 
-You can also find Objective-C version [iOSProjectFrame](https://github.com/DingHub/iOSProjectFrame) with this link.
+You can also find an Objective-C version [iOSProjectFrame](https://github.com/DingHub/iOSProjectFrame) with this link.
