@@ -35,7 +35,10 @@ class Http {
      - parameter params:     can be nil
      - parameter completion: if failed, error will be a hint message and data will be nil
      */
-    class func request(method:HttpMethod, path:String, parameters:Dictionary<String,AnyObject>?, completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
+    class func request(method:HttpMethod,
+                       path:String,
+                       parameters:Dictionary<String,AnyObject>?,
+                       completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
 
         if let url = NSURL(string: host + path) {
             

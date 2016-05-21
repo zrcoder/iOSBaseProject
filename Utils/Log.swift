@@ -32,7 +32,7 @@ func dLog(file:String = #file, line:Int = #line, function:String = #function) {
 }
 
 /**
- print detail log (starts with file name, linen number and method name) when debuging
+ print detail log (starts with file name, line number and method name) when debuging
  - parameter message: main message
  */
 func dLog<T>(message: T, file:String = #file, line:Int = #line, function:String = #function) {
