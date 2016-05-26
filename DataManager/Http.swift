@@ -20,9 +20,9 @@ class Http {
     private class var host : String {
         get {
             #if DEBUG
-            return "http://www.test.com"
+                return "http://www.test.com"
             #else
-            return "http://www.normal.com"
+                return "https://www.normal.com"
             #endif
         }
     }
@@ -46,7 +46,7 @@ class Http {
             
             dLog()
             
-            //  1.  Used Apple's native api here
+            //  Used Apple's native api here
             
             let request = NSMutableURLRequest(URL: url)
             request.timeoutInterval = 30
@@ -82,33 +82,6 @@ class Http {
                 }
             }
             task.resume()
-            
-            //  2.  Here is an implement example of Alamofire
-            
-            //        var alamofireMethod : Alamofire.Method
-            //        switch method {
-            //        case .POST:
-            //            alamofireMethod = .POST
-            //        default:
-            //            alamofireMethod = .GET
-            //        }
-            //
-            //        let url = host + path
-            //        Alamofire.request(alamofireMethod, url, parameters: params)
-            //            .responseJSON { response in
-            //
-            //                dLog(response.request)
-            //
-            //                switch response.result {
-            //                case.Success(let json):
-            //                    log("json type : \(json.dynamicType)")
-            //                    let dict = json as? Dictionary<String,AnyObject>
-            //                    completion(error: nil, data: dict)
-            //                case.Failure(let error):
-            //                    log(error.description)
-            //                    completion(error: error.description, data: nil)
-            //                }
-            //        }
             
         }
     }
