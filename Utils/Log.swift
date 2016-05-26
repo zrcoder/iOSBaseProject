@@ -20,14 +20,14 @@ func log<T>(message:T) {
 }
 
 /**
- print file name, line number and method name when debuging, ended with "-->"
+ print file name, line number and method name when debuging
  - parameter file:   file name
  - parameter method: method name
  - parameter line:   line number in text
  */
 func dLog(file:String = #file, line:Int = #line, function:String = #function) {
     #if DEBUG
-        print("\((file as NSString).lastPathComponent)[\(line)], \(function),  -->")
+        print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛")
     #endif
 }
 
@@ -37,8 +37,7 @@ func dLog(file:String = #file, line:Int = #line, function:String = #function) {
  */
 func dLog<T>(message: T, file:String = #file, line:Int = #line, function:String = #function) {
     #if DEBUG
-        print("\((file as NSString).lastPathComponent)[\(line)], \(function),  -->")
-        print("\(message)")
+        print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛 \(message)")
     #endif
 }
 

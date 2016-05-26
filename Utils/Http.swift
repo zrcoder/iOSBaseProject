@@ -17,7 +17,7 @@ public enum HttpMethod: String {
 }
 
 class Http {
-    
+    /// default host
     private class var host : String {
         get {
             #if DEBUG
@@ -28,11 +28,10 @@ class Http {
         }
     }
     
-    
     /**
      Http request
      - parameter method:     GET, POST and so on
-     - parameter path:       can be by parameters, e.g. "/mobileserver/searchKey.Do?key=hell0"
+     - parameter path:       can be connected by parameters, e.g. "/mobileserver/searchKey.Do?key=hell0"
      - parameter params:     can be nil
      - parameter completion: if failed, error will be a hint message and data will be nil
      */
@@ -40,8 +39,39 @@ class Http {
                        path:String,
                        parameters:Dictionary<String,AnyObject>?,
                        completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
-
-        if let url = NSURL(string: host + path) {
+        
+        request(method, absolutePath: host + path, parameters: parameters, completion: completion)
+    }
+    
+    /**
+     Http request
+     - parameter method:     GET, POST and so on
+     - parameter host:       host
+     - parameter path:       can be connected by parameters, e.g. "/mobileserver/searchKey.Do?key=hell0"
+     - parameter parameters: can be nil
+     - parameter completion: if failed, error will be a hint message and data will be nil
+     */
+    class func request(method:HttpMethod,
+                       host:String,
+                       path:String,
+                       parameters:Dictionary<String,AnyObject>?,
+                       completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
+        request(method, absolutePath: host + path, parameters: parameters, completion: completion)
+    }
+    
+    /**
+     Http request
+     - parameter method:       GET, POST and so on
+     - parameter absolutePath: host + path
+     - parameter parameters:   can be nil
+     - parameter completion:   if failed, error will be a hint message and data will be nil
+     */
+    class func request(method:HttpMethod,
+                               absolutePath:String,
+                               parameters:Dictionary<String,AnyObject>?,
+                               completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
+        
+        if let url = NSURL(string: absolutePath) {
             
             // You can implement with Apple's native api such as NSURLSession or some third library such as Alamofire
             
@@ -52,19 +82,16 @@ class Http {
             let request = NSMutableURLRequest(URL: url)
             request.timeoutInterval = 30
             request.cachePolicy = .ReturnCacheDataElseLoad
-            
             request.HTTPMethod = method.rawValue;
-            
             if let parData = dataWithJSON(parameters) {
                 request.HTTPBody = parData
             }
-            
             log(request)
             
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in
                 
-                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
                     log(error?.description)
                     completion(error: String(error?.code), data: nil)
                     return
@@ -79,8 +106,11 @@ class Http {
             }
             task.resume()
             
+        } else {
+            completion(error: "URL Error", data: nil)
         }
     }
+
 }
 
 
