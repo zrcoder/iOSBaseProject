@@ -12,7 +12,8 @@ import Foundation
  HTTP method definitions.
  */
 public enum HttpMethod: String {
-    case GET, POST
+    case GET = "GET"
+    case POST = "POST"
 }
 
 class Http {
@@ -52,12 +53,7 @@ class Http {
             request.timeoutInterval = 30
             request.cachePolicy = .ReturnCacheDataElseLoad
             
-            switch method {
-            case .POST:
-                request.HTTPMethod = "POST"
-            default:
-                request.HTTPMethod = "GET"
-            }
+            request.HTTPMethod = method.rawValue;
             
             if let parData = dataWithJSON(parameters) {
                 request.HTTPBody = parData
