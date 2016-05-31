@@ -32,9 +32,6 @@ func imageWithColor(color: UIColor, size:CGSize) -> UIImage {
 
 /**
  Compress image
- - parameter image:    source image
- - parameter newWidth: dest image width, height will be compressed proportionally
- - returns: compressed image
  */
 func imageFromSource(image : UIImage, compressedToWidth newWidth : CGFloat) -> UIImage {
     var height = image.size.height
@@ -45,10 +42,7 @@ func imageFromSource(image : UIImage, compressedToWidth newWidth : CGFloat) -> U
 }
 
 /**
- Compress image 
- - parameter image: source image
- - parameter size:  dest image size
- - returns: compressed image
+ Compress image
  */
 func imageFromSource(image : UIImage, compressedToSize size : CGSize) -> UIImage {
     UIGraphicsBeginImageContext(size)

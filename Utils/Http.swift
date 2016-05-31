@@ -75,8 +75,6 @@ class Http {
             
             // You can implement with Apple's native api such as NSURLSession or some third library such as Alamofire
             
-            dLog()
-            
             //  Used Apple's native api here
             
             let request = NSMutableURLRequest(URL: url)
@@ -86,7 +84,7 @@ class Http {
             if let parData = dataWithJSON(parameters) {
                 request.HTTPBody = parData
             }
-            log(request)
+            dLog(request)
             
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in

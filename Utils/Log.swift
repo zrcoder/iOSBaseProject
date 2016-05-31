@@ -11,7 +11,6 @@ import Foundation
 
 /**
  print when debuging
- - parameter message:
  */
 func log<T>(message:T) {
     #if DEBUG  //tip : build settings -> Swift Compiler - Custom Flags -> Other Swift Flags -> debug = -D DEBUG
@@ -21,9 +20,6 @@ func log<T>(message:T) {
 
 /**
  print file name, line number and method name when debuging
- - parameter file:   file name
- - parameter method: method name
- - parameter line:   line number in text
  */
 func dLog(file:String = #file, line:Int = #line, function:String = #function) {
     #if DEBUG
@@ -33,11 +29,10 @@ func dLog(file:String = #file, line:Int = #line, function:String = #function) {
 
 /**
  print detail log (starts with file name, line number and method name) when debuging
- - parameter message: main message
  */
 func dLog<T>(message: T, file:String = #file, line:Int = #line, function:String = #function) {
     #if DEBUG
-        print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛 \(message)")
+        print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛 \n\(message)")
     #endif
 }
 

@@ -10,8 +10,6 @@ import Foundation
 
 /**
  Parse JSON (Array, Dictionary...) to NSData
- - parameter object:
- - returns: if failed, nil
  */
 func dataWithJSON(object:AnyObject?) -> NSData? {
     if let object = object {
@@ -26,8 +24,6 @@ func dataWithJSON(object:AnyObject?) -> NSData? {
 }
 /**
  Parse NSData to JSON (Array, Dictionary...)
- - parameter data:
- - returns: if failed, nil
  */
 func JSONWithData(data:NSData?) -> AnyObject? {
     if let data = data {
@@ -44,8 +40,6 @@ func JSONWithData(data:NSData?) -> AnyObject? {
 
 /**
  Parse NSData to String
- - parameter data:
- - returns: if failed, nil
  */
 func stringWithData(data:NSData?) -> String? {
     if let data = data {
@@ -55,8 +49,6 @@ func stringWithData(data:NSData?) -> String? {
 }
 /**
  Parse String to NSData
- - parameter string:
- - returns: if failed, nil
  */
 func dataWithString(string:String?) -> NSData? {
     if let string = string {
@@ -67,8 +59,6 @@ func dataWithString(string:String?) -> NSData? {
 
 /**
  Parse NSString to JSON (Array, Dictionary...)
- - parameter string:
- - returns: if failed, nil
  */
 func JSONWithString(string:String?) -> AnyObject? {
     let data = dataWithString(string)
@@ -76,8 +66,6 @@ func JSONWithString(string:String?) -> AnyObject? {
 }
 /**
  Parse JSON (Array, Dictionary...) to String
- - parameter object: 
- - returns: if failed, nil
  */
 func stringWithJSON(object:AnyObject?) -> String? {
     let data = dataWithJSON(object)
