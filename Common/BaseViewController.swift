@@ -29,7 +29,7 @@ class BaseViewController: UIViewController {
     private let dialWebView  = UIWebView()
     
     
-    // Some methods can be overrided
+    // Some methods can be overridden
     func popBack() -> Void {
         navigationController?.popViewControllerAnimated(true)
     }
