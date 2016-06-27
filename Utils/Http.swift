@@ -12,8 +12,7 @@ import Foundation
  HTTP method definitions.
  */
 public enum HttpMethod: String {
-    case GET = "GET"
-    case POST = "POST"
+    case GET, POST
 }
 
 class Http {
@@ -37,8 +36,8 @@ class Http {
      */
     class func request(method:HttpMethod,
                        path:String,
-                       parameters:Dictionary<String,AnyObject>?,
-                       completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
+                       parameters:[String : AnyObject]?,
+                       completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
         
         request(method, absolutePath: host + path, parameters: parameters, completion: completion)
     }
@@ -54,8 +53,8 @@ class Http {
     class func request(method:HttpMethod,
                        host:String,
                        path:String,
-                       parameters:Dictionary<String,AnyObject>?,
-                       completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
+                       parameters:[String : AnyObject]?,
+                       completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
         request(method, absolutePath: host + path, parameters: parameters, completion: completion)
     }
     
@@ -68,8 +67,8 @@ class Http {
      */
     class func request(method:HttpMethod,
                                absolutePath:String,
-                               parameters:Dictionary<String,AnyObject>?,
-                               completion:(error:String?, data:Dictionary<String, AnyObject>?)->Void) {
+                               parameters:[String : AnyObject]?,
+                               completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
         
         if let url = NSURL(string: absolutePath) {
             
@@ -90,22 +89,23 @@ class Http {
             let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in
                 
                 guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
-                    log(error?.description)
-                    completion(error: String(error?.code), data: nil)
+                    completion(error: error, data: nil)
                     return
                 }
                 
                 if let dictionary = JSONWithData(data) {
-                    completion(error: nil, data: dictionary as? Dictionary<String, AnyObject>)
+                    completion(error: nil, data: dictionary as? [String : AnyObject])
                 } else {
-                    let hint = "parse response data -> dictionary error"
-                    completion(error: hint, data: nil)
+                    let hint = "can't parse response data -> dictionary"
+                    let error = NSError(domain: hint, code: -2, userInfo: nil)
+                    completion(error: error, data: nil)
                 }
             }
             task.resume()
             
         } else {
-            completion(error: "URL Error", data: nil)
+            let error = NSError(domain: "url error", code: -1, userInfo: nil);
+            completion(error: error, data: nil)
         }
     }
 
