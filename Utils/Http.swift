@@ -87,18 +87,19 @@ class Http {
             
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in
-                
-                guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
-                    completion(error: error, data: nil)
-                    return
-                }
-                
-                if let dictionary = JSONWithData(data) {
-                    completion(error: nil, data: dictionary as? [String : AnyObject])
-                } else {
-                    let hint = "can't parse response data -> dictionary"
-                    let error = NSError(domain: hint, code: -2, userInfo: nil)
-                    completion(error: error, data: nil)
+                dispatch_async(dispatch_get_main_queue()) {
+                    guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
+                        completion(error: error, data: nil)
+                        return
+                    }
+                    
+                    if let dictionary = JSONWithData(data) {
+                        completion(error: nil, data: dictionary as? [String : AnyObject])
+                    } else {
+                        let hint = "can't parse response data -> dictionary"
+                        let error = NSError(domain: hint, code: -2, userInfo: nil)
+                        completion(error: error, data: nil)
+                    }
                 }
             }
             task.resume()
