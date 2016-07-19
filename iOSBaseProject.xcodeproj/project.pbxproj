@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843C626C1D3DACFA00352C1C /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C626B1D3DACFA00352C1C /* DeviceHelper.swift */; };
 		84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465D531D3C74430057A2FE /* BaseTableViewController.swift */; };
 		845FA5971CF6CC2100CEFA47 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FA5961CF6CC2100CEFA47 /* Color.swift */; };
 		845FA5991CF6CC4F00CEFA47 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FA5981CF6CC4F00CEFA47 /* Http.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843C626B1D3DACFA00352C1C /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		84465D531D3C74430057A2FE /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		845FA5961CF6CC2100CEFA47 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		845FA5981CF6CC4F00CEFA47 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				845FA5981CF6CC4F00CEFA47 /* Http.swift */,
 				84B7080D1CEFE512008C51AD /* JSONHelper.swift */,
 				84EF914A1CEDBC1B00B4425B /* ImageHelper.swift */,
+				843C626B1D3DACFA00352C1C /* DeviceHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */,
 				845FA5971CF6CC2100CEFA47 /* Color.swift in Sources */,
 				845FA5991CF6CC4F00CEFA47 /* Http.swift in Sources */,
+				843C626C1D3DACFA00352C1C /* DeviceHelper.swift in Sources */,
 				84EF914C1CEDBC1B00B4425B /* BaseViewController.swift in Sources */,
 				84EF91511CEDBC1B00B4425B /* ImageHelper.swift in Sources */,
 			);
