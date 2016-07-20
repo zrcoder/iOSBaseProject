@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		843C626C1D3DACFA00352C1C /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C626B1D3DACFA00352C1C /* DeviceHelper.swift */; };
 		84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465D531D3C74430057A2FE /* BaseTableViewController.swift */; };
+		844C5C481D3F54F70059A8E4 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C5C441D3F54F70059A8E4 /* AlertHelper.swift */; };
+		844C5C491D3F54F70059A8E4 /* UIActionSheet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C5C451D3F54F70059A8E4 /* UIActionSheet+block.swift */; };
+		844C5C4A1D3F54F70059A8E4 /* UIAlertCotroller+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C5C461D3F54F70059A8E4 /* UIAlertCotroller+block.swift */; };
+		844C5C4B1D3F54F70059A8E4 /* UIAlertView+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C5C471D3F54F70059A8E4 /* UIAlertView+block.swift */; };
 		845FA5971CF6CC2100CEFA47 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FA5961CF6CC2100CEFA47 /* Color.swift */; };
 		845FA5991CF6CC4F00CEFA47 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845FA5981CF6CC4F00CEFA47 /* Http.swift */; };
 		84B7080E1CEFE512008C51AD /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7080D1CEFE512008C51AD /* JSONHelper.swift */; };
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		843C626B1D3DACFA00352C1C /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		84465D531D3C74430057A2FE /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		844C5C441D3F54F70059A8E4 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		844C5C451D3F54F70059A8E4 /* UIActionSheet+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActionSheet+block.swift"; sourceTree = "<group>"; };
+		844C5C461D3F54F70059A8E4 /* UIAlertCotroller+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertCotroller+block.swift"; sourceTree = "<group>"; };
+		844C5C471D3F54F70059A8E4 /* UIAlertView+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+block.swift"; sourceTree = "<group>"; };
 		845FA5961CF6CC2100CEFA47 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		845FA5981CF6CC4F00CEFA47 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		84B7080D1CEFE512008C51AD /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
@@ -56,6 +64,17 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		844C5C431D3F54F70059A8E4 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				844C5C441D3F54F70059A8E4 /* AlertHelper.swift */,
+				844C5C471D3F54F70059A8E4 /* UIAlertView+block.swift */,
+				844C5C451D3F54F70059A8E4 /* UIActionSheet+block.swift */,
+				844C5C461D3F54F70059A8E4 /* UIAlertCotroller+block.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		84EF91221CEDBB7E00B4425B = {
@@ -108,6 +127,7 @@
 				84B7080D1CEFE512008C51AD /* JSONHelper.swift */,
 				84EF914A1CEDBC1B00B4425B /* ImageHelper.swift */,
 				843C626B1D3DACFA00352C1C /* DeviceHelper.swift */,
+				844C5C431D3F54F70059A8E4 /* Alert */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -184,8 +204,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */,
+				844C5C481D3F54F70059A8E4 /* AlertHelper.swift in Sources */,
 				84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */,
+				844C5C491D3F54F70059A8E4 /* UIActionSheet+block.swift in Sources */,
 				84EF91521CEDBC1B00B4425B /* Log.swift in Sources */,
+				844C5C4B1D3F54F70059A8E4 /* UIAlertView+block.swift in Sources */,
+				844C5C4A1D3F54F70059A8E4 /* UIAlertCotroller+block.swift in Sources */,
 				84B7080E1CEFE512008C51AD /* JSONHelper.swift in Sources */,
 				84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */,
 				845FA5971CF6CC2100CEFA47 /* Color.swift in Sources */,
