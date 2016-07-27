@@ -11,7 +11,7 @@ import Foundation
 /**
  Parse JSON (Array, Dictionary...) to NSData
  */
-func dataWithJSON(object:AnyObject?) -> NSData? {
+public func dataWithJSON(object:AnyObject?) -> NSData? {
     if let object = object {
         do {
             let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions())
@@ -25,7 +25,7 @@ func dataWithJSON(object:AnyObject?) -> NSData? {
 /**
  Parse NSData to JSON (Array, Dictionary...)
  */
-func JSONWithData(data:NSData?) -> AnyObject? {
+public func JSONWithData(data:NSData?) -> AnyObject? {
     if let data = data {
         do {
             let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
@@ -41,7 +41,7 @@ func JSONWithData(data:NSData?) -> AnyObject? {
 /**
  Parse NSData to String
  */
-func stringWithData(data:NSData?) -> String? {
+public func stringWithData(data:NSData?) -> String? {
     if let data = data {
         return String(data: data, encoding: NSUTF8StringEncoding)
     }
@@ -50,7 +50,7 @@ func stringWithData(data:NSData?) -> String? {
 /**
  Parse String to NSData
  */
-func dataWithString(string:String?) -> NSData? {
+public func dataWithString(string:String?) -> NSData? {
     if let string = string {
         return string.dataUsingEncoding(NSUTF8StringEncoding)
     }
@@ -60,14 +60,14 @@ func dataWithString(string:String?) -> NSData? {
 /**
  Parse NSString to JSON (Array, Dictionary...)
  */
-func JSONWithString(string:String?) -> AnyObject? {
+public func JSONWithString(string:String?) -> AnyObject? {
     let data = dataWithString(string)
     return JSONWithData(data)
 }
 /**
  Parse JSON (Array, Dictionary...) to String
  */
-func stringWithJSON(object:AnyObject?) -> String? {
+public func stringWithJSON(object:AnyObject?) -> String? {
     let data = dataWithJSON(object)
     return stringWithData(data)
 }

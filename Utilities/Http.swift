@@ -15,9 +15,9 @@ public enum HttpMethod: String {
     case GET, POST
 }
 
-class Http {
+public struct Http {
     /// default host
-    private class var host : String {
+    private static var host : String {
         get {
             #if DEBUG
                 return "http://www.test.com"
@@ -34,7 +34,7 @@ class Http {
      - parameter params:     can be nil
      - parameter completion: if failed, error will be a hint message and data will be nil
      */
-    class func request(method:HttpMethod,
+    public static func request(method:HttpMethod,
                        path:String,
                        parameters:[String : AnyObject]?,
                        completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
@@ -50,7 +50,7 @@ class Http {
      - parameter parameters: can be nil
      - parameter completion: if failed, error will be a hint message and data will be nil
      */
-    class func request(method:HttpMethod,
+    public static func request(method:HttpMethod,
                        host:String,
                        path:String,
                        parameters:[String : AnyObject]?,
@@ -65,7 +65,7 @@ class Http {
      - parameter parameters:   can be nil
      - parameter completion:   if failed, error will be a hint message and data will be nil
      */
-    class func request(method:HttpMethod,
+    public static func request(method:HttpMethod,
                                absolutePath:String,
                                parameters:[String : AnyObject]?,
                                completion:(error:NSError?, data:[String : AnyObject]?)->Void) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias AlertButtonTappedBlock = (Int) -> Void;
+public typealias AlertButtonTappedBlock = (Int) -> Void;
 var alertButtonTappedHandler: AlertButtonTappedBlock?
 
 extension UIApplication: UIAlertViewDelegate, UIActionSheetDelegate {
@@ -37,7 +37,7 @@ extension UIApplication: UIAlertViewDelegate, UIActionSheetDelegate {
  - parameter otherButtonTitles:
  - parameter buttonTappedHandler:    The index of buttons will ordered like : destructive button -> cancel button -> other buttons
  */
-func showAlertViewFor(viewController: UIViewController?,
+public func showAlertViewFor(viewController: UIViewController?,
                       title: String?,
                       message: String?,
                       destructiveButtonTitle: String?,
@@ -65,7 +65,7 @@ func showAlertViewFor(viewController: UIViewController?,
  - parameter otherButtonTitles:
  - parameter buttonTappedHandler:    The index of buttons will ordered like : destructive button -> cancel button -> other buttons
  */
-func showActionSheetFor(viewController: UIViewController?,
+public func showActionSheetFor(viewController: UIViewController?,
                         sourceRect: CGRect? = nil,
                         title: String?,
                         message: String?,

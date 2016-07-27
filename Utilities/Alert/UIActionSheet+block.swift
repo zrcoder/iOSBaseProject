@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIActionSheet {
-    static func showIn(view: UIView,
+    public static func showIn(view: UIView,
                        title: String?,
                        destructiveTitle: String?,
                        cancelButtonTitle: String?,

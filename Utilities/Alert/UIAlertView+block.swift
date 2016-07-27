@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIAlertView {
-    static func show(title: String?,
+    public static func show(title: String?,
                      message: String?,
                      cancelButtonTitle: String?,
                      otherButtonTitles: [String]?,

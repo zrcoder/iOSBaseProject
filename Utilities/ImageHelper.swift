@@ -12,14 +12,14 @@ import UIKit
  generate image with color
  - returns: the image size will be (1.0, 1.0)
  */
-func imageWithColor(color: UIColor) -> UIImage {
+public func imageWithColor(color: UIColor) -> UIImage {
     return imageWithColor(color, size: CGSizeMake(1.0, 1.0))
 }
 
 /**
  generate image with color and size
  */
-func imageWithColor(color: UIColor, size:CGSize) -> UIImage {
+public func imageWithColor(color: UIColor, size:CGSize) -> UIImage {
     let rect = CGRectMake(0.0, 0.0, size.width, size.height)
     UIGraphicsBeginImageContext(size)
     let context = UIGraphicsGetCurrentContext()
@@ -33,7 +33,7 @@ func imageWithColor(color: UIColor, size:CGSize) -> UIImage {
 /**
  Compress image
  */
-func imageFromSource(image : UIImage, compressedToWidth newWidth : CGFloat) -> UIImage {
+public func imageFromSource(image : UIImage, compressedToWidth newWidth : CGFloat) -> UIImage {
     var height = image.size.height
     let width = image.size.width
     height = height * newWidth / width
@@ -44,7 +44,7 @@ func imageFromSource(image : UIImage, compressedToWidth newWidth : CGFloat) -> U
 /**
  Compress image
  */
-func imageFromSource(image : UIImage, compressedToSize size : CGSize) -> UIImage {
+public func imageFromSource(image : UIImage, compressedToSize size : CGSize) -> UIImage {
     UIGraphicsBeginImageContext(size)
     image.drawInRect(CGRectMake(0.0, 0.0, size.width, size.height))
     let newImage = UIGraphicsGetImageFromCurrentImageContext()

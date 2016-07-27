@@ -13,6 +13,14 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dLog("Hello, world!")
+        log(DeviceHelper.cpuNumber())
+        Http.request(.GET, absolutePath: "hhh", parameters: nil) { (error, data) in
+            if let error = error {
+                log(error)
+            } else {
+                log(data)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
