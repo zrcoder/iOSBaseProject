@@ -88,8 +88,8 @@ public struct DeviceInfo {
         case "iPad5,3": return "iPad Air 2 (WiFi)"
         case "iPad5,4": return "iPad Air 2 (Cellular)"
         //  simulator
-        case "i386": return "Simulator (iPhone)"
-        case "x86_64": return "Simulator (iPad)"
+        case "i386": return "Simulator i386"
+        case "x86_64": return "Simulator x86_64"
         default: return platform;
         }
     }
