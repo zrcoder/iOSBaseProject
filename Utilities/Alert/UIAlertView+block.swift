@@ -9,18 +9,27 @@
 import UIKit
 
 extension UIAlertView {
-    public static func show(title: String?,
-                     message: String?,
-                     cancelButtonTitle: String?,
-                     otherButtonTitles: [String]?,
-                     buttonTappedHandler: AlertButtonTappedBlock) {        
+    
+    public static func show(title: String? = nil,
+                            message: String? = nil,
+                            cancelButtonTitle: String? = nil,
+                            otherButtonTitles: [String]? = nil,
+                            buttonTappedHandler: AlertButtonTappedBlock? = nil) {
         
-        let alertView = UIAlertView(title: title, message:message, delegate:UIApplication.sharedApplication(), cancelButtonTitle:cancelButtonTitle)
-        for title in otherButtonTitles! {
-            alertView.addButtonWithTitle(title)
+        let alertView = UIAlertView(title: title,
+                                    message:message,
+                                    delegate:UIApplication.sharedApplication(),
+                                    cancelButtonTitle:cancelButtonTitle)
+        
+        if let otherButtonTitles = otherButtonTitles {
+            for title in otherButtonTitles {
+                alertView.addButtonWithTitle(title)
+            }
         }
+        
         alertButtonTappedHandler = buttonTappedHandler
         alertView.show()
+        
     }
 }
   

@@ -9,18 +9,27 @@
 import UIKit
 
 extension UIActionSheet {
+    
     public static func showIn(view: UIView,
-                       title: String?,
-                       destructiveTitle: String?,
-                       cancelButtonTitle: String?,
-                       otherButtonTitles: [String]?,
-                       buttonTappedHandler: AlertButtonTappedBlock) {
-        let actionSheet = UIActionSheet(title: title, delegate: UIApplication.sharedApplication(), cancelButtonTitle: cancelButtonTitle, destructiveButtonTitle: destructiveTitle)
+                              title: String? = nil,
+                              destructiveTitle: String? = nil,
+                              cancelButtonTitle: String? = nil,
+                              otherButtonTitles: [String]? = nil,
+                              buttonTappedHandler: AlertButtonTappedBlock? = nil) {
         
-        for title in otherButtonTitles! {
-            actionSheet.addButtonWithTitle(title)
+        let actionSheet = UIActionSheet(title: title,
+                                        delegate: UIApplication.sharedApplication(),
+                                        cancelButtonTitle: cancelButtonTitle,
+                                        destructiveButtonTitle: destructiveTitle)
+        
+        if let otherButtonTitles = otherButtonTitles {
+            for title in otherButtonTitles {
+                actionSheet.addButtonWithTitle(title)
+            }
         }
+        
         alertButtonTappedHandler = buttonTappedHandler
         actionSheet.showInView(view)
+        
     }
 }
