@@ -55,6 +55,7 @@ public struct Http {
                        path:String,
                        parameters:[String : AnyObject]?,
                        completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
+        
         request(method, absolutePath: host + path, parameters: parameters, completion: completion)
     }
     

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		843746D21D45AEC20014D5C6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C81D45AEC20014D5C6 /* Color.swift */; };
-		843746D31D45AEC20014D5C6 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C91D45AEC20014D5C6 /* DeviceHelper.swift */; };
+		843746D31D45AEC20014D5C6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C91D45AEC20014D5C6 /* DeviceInfo.swift */; };
 		843746D41D45AEC20014D5C6 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CA1D45AEC20014D5C6 /* Http.swift */; };
 		843746D51D45AEC20014D5C6 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CB1D45AEC20014D5C6 /* ImageHelper.swift */; };
 		843746D61D45AEC20014D5C6 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CC1D45AEC20014D5C6 /* JSONHelper.swift */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		843746C81D45AEC20014D5C6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		843746C91D45AEC20014D5C6 /* DeviceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		843746C91D45AEC20014D5C6 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		843746CA1D45AEC20014D5C6 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		843746CB1D45AEC20014D5C6 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		843746CC1D45AEC20014D5C6 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
@@ -72,12 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				843746C31D45AEC20014D5C6 /* Alert */,
+				843746CD1D45AEC20014D5C6 /* Log.swift */,
 				843746C81D45AEC20014D5C6 /* Color.swift */,
-				843746C91D45AEC20014D5C6 /* DeviceHelper.swift */,
 				843746CA1D45AEC20014D5C6 /* Http.swift */,
 				843746CB1D45AEC20014D5C6 /* ImageHelper.swift */,
 				843746CC1D45AEC20014D5C6 /* JSONHelper.swift */,
-				843746CD1D45AEC20014D5C6 /* Log.swift */,
+				843746C91D45AEC20014D5C6 /* DeviceInfo.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				843746D71D45AEC20014D5C6 /* Log.swift in Sources */,
 				844154F71D4AEBFB0067C8CB /* UIAlertCotroller+block.swift in Sources */,
 				843746D61D45AEC20014D5C6 /* JSONHelper.swift in Sources */,
-				843746D31D45AEC20014D5C6 /* DeviceHelper.swift in Sources */,
+				843746D31D45AEC20014D5C6 /* DeviceInfo.swift in Sources */,
 				84EF914C1CEDBC1B00B4425B /* BaseViewController.swift in Sources */,
 				844154F51D4AEBFB0067C8CB /* UIAlertView+block.swift in Sources */,
 				843746D21D45AEC20014D5C6 /* Color.swift in Sources */,

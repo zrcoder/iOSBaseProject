@@ -1,5 +1,5 @@
 //
-//  DeviceHelper.swift
+//  DeviceInfo.swift
 //  iOSBaseProject
 //
 //  Created by admin on 16/7/19.
@@ -10,7 +10,7 @@ import UIKit
 
 private let UniqueIdentifierDefaultsKey = "UniqueIdentifierDefaultsKey"
 
-public struct DeviceHelper {
+public struct DeviceInfo {
     /**
      *  The system version without the subversion
      *  Example: 7.0
@@ -36,10 +36,62 @@ public struct DeviceHelper {
      */
     public static func platformForUser() -> String {
         let platform = self.platform()
-        if let result = p_platformMap[platform] {
-            return result
+        
+        switch platform {
+        //  iPhone
+        case "iPhone1,1": return "iPhone 2G"
+        case "iPhone1,2": return "iPhone 3G"
+        case "iPhone2,1": return "iPhone 3GS"
+        case "iPhone3,1": return "iPhone 4"
+        case "iPhone3,3": return "iPhone 4 (CDMA)"
+        case "iPhone4,1": return "iPhone 4S"
+        case "iPhone5,1": return "iPhone 5 (GSM)"
+        case "iPhone5,2": return "iPhone 5 (CDMA)"
+        case "iPhone5,3": return "iPhone 5C (GSM)"
+        case "iPhone5,4": return "iPhone 5C (Global)"
+        case "iPhone6,1": return "iPhone 5S (GSM)"
+        case "iPhone6,2": return "iPhone 5S (Global)"
+        case "iPhone7,1": return "iPhone 6 Plus"
+        case "iPhone7,2": return "iPhone 6"
+        case "iPhone8,1": return "iPhone 6s"
+        case "iPhone8,2": return "iPhone 6s Plus"
+        //  iPod
+        case "iPod1,1": return "iPod Touch 1G"
+        case "iPod2,1": return "iPod Touch 2G"
+        case "iPod3,1": return "iPod Touch 3G"
+        case "iPod4,1": return "iPod Touch 4G"
+        case "iPod5,1": return "iPod Touch 5G"
+        //  iPad
+        case "iPad1,1": return "iPad 1"
+        case "iPad2,1": return "iPad 2 (WiFi)"
+        case "iPad2,2": return "iPad 2 (GSM)"
+        case "iPad2,3": return "iPad 2 (CDMA)"
+        case "iPad2,4": return "iPad 2 (32nm)"
+        case "iPad2,5": return "iPad mini (WiFi)"
+        case "iPad2,6": return "iPad mini (GSM)"
+        case "iPad2,7": return "iPad mini (CDMA)"
+        case "iPad3,1": return "iPad 3 (WiFi)"
+        case "iPad3,2": return "iPad 3 (CDMA)"
+        case "iPad3,3": return "iPad 3 (GSM)"
+        case "iPad3,4": return "iPad 4 (WiFi)"
+        case "iPad3,5": return "iPad 4 (GSM)"
+        case "iPad3,6": return "iPad 4 (CDMA)"
+        case "iPad4,1": return "iPad Air (WiFi)"
+        case "iPad4,2": return "iPad Air (Cellular)"
+        case "iPad4,3": return "iPad Air (China)"
+        case "iPad4,4": return "iPad mini 2 (WiFi)"
+        case "iPad4,5": return "iPad mini 2 (Cellular)"
+        case "iPad4,6": return "iPad mini 2 (China)"
+        case "iPad4,7": return "iPad mini 3 (WiFi)"
+        case "iPad4,8": return "iPad mini 3 (Cellular)"
+        case "iPad4,9": return "iPad mini 3 (China)"
+        case "iPad5,3": return "iPad Air 2 (WiFi)"
+        case "iPad5,4": return "iPad Air 2 (Cellular)"
+        //  simulator
+        case "i386": return "Simulator (iPhone)"
+        case "x86_64": return "Simulator (iPad)"
+        default: return platform;
         }
-        return platform;
     }
     /**
      *  Check if the current device is an iPhone
@@ -205,59 +257,4 @@ public struct DeviceHelper {
         }
         return uuid
     }
-    
-    private static let p_platformMap = [
-        //  iPhone
-        "iPhone1,1": "iPhone 2G",
-        "iPhone1,2": "iPhone 3G",
-        "iPhone2,1": "iPhone 3GS",
-        "iPhone3,1": "iPhone 4",
-        "iPhone3,3": "iPhone 4 (CDMA)",
-        "iPhone4,1": "iPhone 4S",
-        "iPhone5,1": "iPhone 5 (GSM)",
-        "iPhone5,2": "iPhone 5 (CDMA)",
-        "iPhone5,3": "iPhone 5C (GSM)",
-        "iPhone5,4": "iPhone 5C (Global)",
-        "iPhone6,1": "iPhone 5S (GSM)",
-        "iPhone6,2": "iPhone 5S (Global)",
-        "iPhone7,1": "iPhone 6 Plus",
-        "iPhone7,2": "iPhone 6",
-        "iPhone8,1": "iPhone 6s",
-        "iPhone8,2": "iPhone 6s Plus",
-        //  iPod
-        "iPod1,1": "iPod Touch 1G",
-        "iPod2,1": "iPod Touch 2G",
-        "iPod3,1": "iPod Touch 3G",
-        "iPod4,1": "iPod Touch 4G",
-        "iPod5,1": "iPod Touch 5G",
-        //  iPad
-        "iPad1,1": "iPad 1",
-        "iPad2,1": "iPad 2 (WiFi)",
-        "iPad2,2": "iPad 2 (GSM)",
-        "iPad2,3": "iPad 2 (CDMA)",
-        "iPad2,4": "iPad 2 (32nm)",
-        "iPad2,5": "iPad mini (WiFi)",
-        "iPad2,6": "iPad mini (GSM)",
-        "iPad2,7": "iPad mini (CDMA)",
-        "iPad3,1": "iPad 3 (WiFi)",
-        "iPad3,2": "iPad 3 (CDMA)",
-        "iPad3,3": "iPad 3 (GSM)",
-        "iPad3,4": "iPad 4 (WiFi)",
-        "iPad3,5": "iPad 4 (GSM)",
-        "iPad3,6": "iPad 4 (CDMA)",
-        "iPad4,1": "iPad Air (WiFi)",
-        "iPad4,2": "iPad Air (Cellular)",
-        "iPad4,3": "iPad Air (China)",
-        "iPad4,4": "iPad mini 2 (WiFi)",
-        "iPad4,5": "iPad mini 2 (Cellular)",
-        "iPad4,6": "iPad mini 2 (China)",
-        "iPad4,7": "iPad mini 3 (WiFi)",
-        "iPad4,8": "iPad mini 3 (Cellular)",
-        "iPad4,9": "iPad mini 3 (China)",
-        "iPad5,3": "iPad Air 2 (WiFi)",
-        "iPad5,4": "iPad Air 2 (Cellular)",
-        //  simulator
-        "i386": "Simulator (iPhone)",
-        "x86_64": "Simulator (iPad)"
-    ]
 }

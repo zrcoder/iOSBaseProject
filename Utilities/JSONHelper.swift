@@ -16,12 +16,13 @@ public func dataWithJSON(object:AnyObject?) -> NSData? {
         do {
             let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions())
             return data
-        } catch {
-            dLog("parse JSONObject -> NSData failed")
+        } catch let error as NSError {
+            dLog("JSON->NSData failed:\(error)")
         }
     }
     return nil
 }
+
 /**
  Parse NSData to JSON (Array, Dictionary...)
  */
@@ -30,8 +31,8 @@ public func JSONWithData(data:NSData?) -> AnyObject? {
         do {
             let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
             return object
-        } catch {
-            dLog("parse NSData -> JSONObject failed")
+        } catch let error as NSError {
+            dLog("NSData->JSON failed:\(error)")
         }
         
     }
@@ -47,6 +48,7 @@ public func stringWithData(data:NSData?) -> String? {
     }
     return nil
 }
+
 /**
  Parse String to NSData
  */
@@ -64,6 +66,7 @@ public func JSONWithString(string:String?) -> AnyObject? {
     let data = dataWithString(string)
     return JSONWithData(data)
 }
+
 /**
  Parse JSON (Array, Dictionary...) to String
  */

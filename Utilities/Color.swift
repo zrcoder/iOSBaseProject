@@ -10,6 +10,7 @@ import UIKit
 public typealias Color = UIColor
 
 public extension Color {
+    
     /**
      Creates a color of random red, green and blue
      - returns: random color
@@ -18,15 +19,15 @@ public extension Color {
         let red = CGFloat(arc4random_uniform(256)) / 255.0
         let green = CGFloat(arc4random_uniform(256)) / 255.0
         let blue = CGFloat(arc4random_uniform(256)) / 255.0
-        return Color(red: red, green: green, blue: blue, alpha: 1)
+        return self.init(red: red, green: green, blue: blue, alpha: 1)
     }
+    
     /**
      Creates a color from an hex string (e.g. "#3498db").
      If the given hex string is invalid the initialiser will create a black color.
      - parameter hexString: A hexa-decimal color string representation.
      */
     public convenience init(hexString: String) {
-        let hexString = hexString.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         let scanner   = NSScanner(string: hexString)
         
         if (hexString.hasPrefix("#")) {
@@ -41,6 +42,7 @@ public extension Color {
             self.init(hex: 0x000000)
         }
     }
+    
     /**
      Creates a color from an hex integer (e.g. 0x3498db).
      - parameter hex: A hexa-decimal UInt32 that represents a color.
@@ -58,6 +60,7 @@ public extension Color {
         
         self.init(red:red, green:green, blue:blue, alpha:1)
     }
+    
 }
 
 
