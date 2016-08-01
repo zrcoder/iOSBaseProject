@@ -10,6 +10,9 @@ import UIKit
 
 extension UIAlertView {
     
+    /**
+     - parameter buttonTappedHandler: The index of buttons will ordered like : destructive button -> cancel button -> other buttons
+     */
     public static func show(title: String? = nil,
                             message: String? = nil,
                             cancelButtonTitle: String? = nil,
@@ -18,7 +21,7 @@ extension UIAlertView {
         
         let alertView = UIAlertView(title: title,
                                     message:message,
-                                    delegate:UIApplication.sharedApplication(),
+                                    delegate:AlertHelper.sharedHelper,
                                     cancelButtonTitle:cancelButtonTitle)
         
         if let otherButtonTitles = otherButtonTitles {

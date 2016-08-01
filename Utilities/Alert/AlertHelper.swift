@@ -11,7 +11,9 @@ import UIKit
 public typealias AlertButtonTappedBlock = (Int) -> Void;
 var alertButtonTappedHandler: AlertButtonTappedBlock?
 
-extension UIApplication: UIAlertViewDelegate, UIActionSheetDelegate {
+public class AlertHelper: NSObject, UIAlertViewDelegate, UIActionSheetDelegate {
+    public static let sharedHelper = AlertHelper()
+    private override init() {}
     
     public func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         if let handler = alertButtonTappedHandler {
@@ -26,6 +28,5 @@ extension UIApplication: UIAlertViewDelegate, UIActionSheetDelegate {
             alertButtonTappedHandler = nil
         }
     }
-
 }
 

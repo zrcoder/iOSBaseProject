@@ -10,6 +10,9 @@ import UIKit
 
 extension UIActionSheet {
     
+    /**
+     - parameter buttonTappedHandler: The index of buttons will ordered like : destructive button -> cancel button -> other buttons
+     */
     public static func showIn(view: UIView,
                               title: String? = nil,
                               destructiveTitle: String? = nil,
@@ -18,7 +21,7 @@ extension UIActionSheet {
                               buttonTappedHandler: AlertButtonTappedBlock? = nil) {
         
         let actionSheet = UIActionSheet(title: title,
-                                        delegate: UIApplication.sharedApplication(),
+                                        delegate: AlertHelper.sharedHelper,
                                         cancelButtonTitle: cancelButtonTitle,
                                         destructiveButtonTitle: destructiveTitle)
         
