@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Carvert to Int, Double, Float, Bool, ...
-extension String {
+public extension String {
     
     /// Converts String to Int
     public func toInt() -> Int? {

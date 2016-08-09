@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     /// Find matches of regular expression in string
     public func matchesForRegexInText(regex: String!) -> [String] {

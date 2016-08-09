@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     /// Character count
     public var length: Int {

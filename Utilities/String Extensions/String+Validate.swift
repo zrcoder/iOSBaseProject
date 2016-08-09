@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     
     ///  Returns true if String is Email
     public var isEmail: Bool {

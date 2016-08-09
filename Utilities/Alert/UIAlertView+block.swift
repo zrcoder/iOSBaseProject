@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIAlertView {
+public extension UIAlertView {
     
     /**
      - parameter buttonTappedHandler: The index of buttons will ordered like : destructive button -> cancel button -> other buttons

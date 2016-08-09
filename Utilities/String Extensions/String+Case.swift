@@ -7,7 +7,7 @@
 //
 
 // MARK: - upercase, lowercase
-extension String {
+public extension String {
     
     /// Capitalizes first character of String
     public mutating func capitalizeFirst() {

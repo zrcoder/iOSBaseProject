@@ -9,7 +9,7 @@
 import UIKit
 
 @available(iOS 8.0, *)
-extension UIAlertController {
+public extension UIAlertController {
     
     public static func show(style: UIAlertControllerStyle = .Alert,
                             viewController: UIViewController,

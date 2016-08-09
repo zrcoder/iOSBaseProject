@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIActionSheet {
+public extension UIActionSheet {
     
     /**
      - parameter buttonTappedHandler: The index of buttons will ordered like : destructive button -> cancel button -> other buttons

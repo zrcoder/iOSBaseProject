@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - AttributedString from String
-extension String {
+public extension String {
     
     /// Returns bold NSAttributedString
     public var bold: NSAttributedString {

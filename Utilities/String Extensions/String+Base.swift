@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension String {
+public extension String {
     
     /// Checks if string is empty or consists only of whitespace and newline characters
     public var isBlank: Bool {

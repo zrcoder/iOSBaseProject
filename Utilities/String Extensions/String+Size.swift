@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension String {
+public extension String {
     /// Returns hight of rendered string
     func height(width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
         var attributes: [String: AnyObject] = [NSFontAttributeName: font]
