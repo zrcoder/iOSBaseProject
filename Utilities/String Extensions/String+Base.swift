@@ -19,13 +19,13 @@ extension String {
     }
     
     /// Checking if String contains input
-    public func contains(find: String) -> Bool {
-        return self.rangeOfString(find) != nil
+    public func contains(subString: String) -> Bool {
+        return self.rangeOfString(subString) != nil
     }
     
     /// Checking if String contains input with comparing options
-    public func contains(find: String, compareOption: NSStringCompareOptions) -> Bool {
-        return self.rangeOfString(find, options: compareOption) != nil
+    public func contains(subString: String, compareOption: NSStringCompareOptions) -> Bool {
+        return self.rangeOfString(subString, options: compareOption) != nil
     }
     
     /// Checks if String contains Emoji

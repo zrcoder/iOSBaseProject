@@ -95,10 +95,8 @@
 		843746C21D45AEC20014D5C6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				843E52621D59BF19005179C2 /* String Extensions */,
 				843E523B1D597F8F005179C2 /* Handy.swift */,
-				843E523D1D598982005179C2 /* ScreenInfo.swift */,
-				843E523F1D598B92005179C2 /* GCD.swift */,
+				843E52621D59BF19005179C2 /* String Extensions */,
 				843746C31D45AEC20014D5C6 /* Alert */,
 				843746CD1D45AEC20014D5C6 /* Log.swift */,
 				843746C81D45AEC20014D5C6 /* Color.swift */,
@@ -106,6 +104,8 @@
 				843746CB1D45AEC20014D5C6 /* ImageHelper.swift */,
 				843746CC1D45AEC20014D5C6 /* JSONHelper.swift */,
 				843746C91D45AEC20014D5C6 /* DeviceInfo.swift */,
+				843E523D1D598982005179C2 /* ScreenInfo.swift */,
+				843E523F1D598B92005179C2 /* GCD.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

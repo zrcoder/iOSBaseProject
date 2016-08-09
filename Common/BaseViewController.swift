@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
     
     
     // Some methods can be overridden
-    func popBack() -> Void {
+    func backButtonTapped() -> Void {
         navigationController?.popViewControllerAnimated(true)
     }
     
@@ -43,7 +43,7 @@ class BaseViewController: UIViewController {
             let button = UIButton(type: .Custom)
             button.frame = CGRectMake(0, 0, 44, 44)
             button.setImage(UIImage(named: "arrowLeft"), forState: .Normal)
-            button.addTarget(self, action: #selector(popBack), forControlEvents: .TouchUpInside)
+            button.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
             let buttonItem = UIBarButtonItem(customView: button)
             let spacerItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
             spacerItem.width = -18;

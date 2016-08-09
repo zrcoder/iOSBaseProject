@@ -28,28 +28,13 @@ public struct Http {
     /**
      Http request
      - parameter method:     GET, POST and so on
-     - parameter path:       can be connected by parameters, e.g. "/mobileserver/searchKey.Do?key=hell0"
-     - parameter params:     can be nil
-     - parameter completion: if failed, error will be a hint message and data will be nil
-     */
-    public static func request(method:HttpMethod,
-                       path:String,
-                       parameters:[String : AnyObject]?,
-                       completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
-        
-        request(method, absolutePath: host + path, parameters: parameters, completion: completion)
-    }
-    
-    /**
-     Http request
-     - parameter method:     GET, POST and so on
      - parameter host:       host
      - parameter path:       can be connected by parameters, e.g. "/mobileserver/searchKey.Do?key=hell0"
      - parameter parameters: can be nil
      - parameter completion: if failed, error will be a hint message and data will be nil
      */
-    public static func request(method:HttpMethod,
-                       host:String,
+    public static func request(method:HttpMethod = .GET,
+                       host:String = host,
                        path:String,
                        parameters:[String : AnyObject]?,
                        completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
@@ -64,7 +49,7 @@ public struct Http {
      - parameter parameters:   can be nil
      - parameter completion:   if failed, error will be a hint message and data will be nil
      */
-    public static func request(method:HttpMethod,
+    public static func request(method:HttpMethod = .GET,
                                absolutePath:String,
                                parameters:[String : AnyObject]?,
                                completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
