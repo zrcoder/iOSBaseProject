@@ -13,20 +13,20 @@ import Foundation
  print when debuging
  */
 public func log(message:Any) {
-    #if DEBUG  //tip : build settings -> Swift Compiler - Custom Flags -> Other Swift Flags -> debug = -D DEBUG
+    if isDebug {
         print("\(message)")
-    #endif
+    }
 }
 
 /**
  print detail log (starts with file name, line number and method name) when debuging
  */
 public func dLog(message: Any? = nil, file:String = #file, line:Int = #line, function:String = #function) {
-    #if DEBUG
+    if isDebug {
         if let message = message {
             print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛 \n\(message)")
         } else {
             print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛")
         }
-    #endif
+    }
 }

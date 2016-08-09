@@ -11,6 +11,19 @@ import UIKit
 private let UniqueIdentifierDefaultsKey = "UniqueIdentifierDefaultsKey"
 
 public struct DeviceInfo {
+    /// Returns true if it's simulator and not a device
+    public static var isSimulator: Bool {
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            return true
+        #else
+            return false
+        #endif
+    }
+    
+    /// Returns true if its on a device and not a simulator
+    public static var isDevice: Bool {
+        return !isSimulator
+    }
     /**
      *  The system version without the subversion
      *  Example: 7.0
@@ -110,12 +123,6 @@ public struct DeviceInfo {
      */
     public static func isiPod() -> Bool {
         return self.platform().hasPrefix("iPod")
-    }
-    /**
-     *  Check if the current device is the simulator
-     */
-    public static func isSimulator() -> Bool {
-        return self.platform() == "i386" || self.platform() == "x86_64"
     }
     /**
      *  Check if the current device has a Retina display

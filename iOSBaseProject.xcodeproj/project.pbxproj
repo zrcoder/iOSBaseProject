@@ -18,6 +18,18 @@
 		843746D51D45AEC20014D5C6 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CB1D45AEC20014D5C6 /* ImageHelper.swift */; };
 		843746D61D45AEC20014D5C6 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CC1D45AEC20014D5C6 /* JSONHelper.swift */; };
 		843746D71D45AEC20014D5C6 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CD1D45AEC20014D5C6 /* Log.swift */; };
+		843E523C1D597F8F005179C2 /* Handy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E523B1D597F8F005179C2 /* Handy.swift */; };
+		843E523E1D598982005179C2 /* ScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E523D1D598982005179C2 /* ScreenInfo.swift */; };
+		843E52401D598B92005179C2 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E523F1D598B92005179C2 /* GCD.swift */; };
+		843E526A1D59BF19005179C2 /* String+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52631D59BF19005179C2 /* String+Attribute.swift */; };
+		843E526B1D59BF19005179C2 /* String+Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52641D59BF19005179C2 /* String+Case.swift */; };
+		843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52651D59BF19005179C2 /* String+Convert.swift */; };
+		843E526D1D59BF19005179C2 /* String+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52661D59BF19005179C2 /* String+Index.swift */; };
+		843E526E1D59BF19005179C2 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52671D59BF19005179C2 /* String+Regex.swift */; };
+		843E526F1D59BF19005179C2 /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52681D59BF19005179C2 /* String+Validate.swift */; };
+		843E52701D59BF19005179C2 /* String+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52691D59BF19005179C2 /* String+Base.swift */; };
+		843E52721D59C75A005179C2 /* String+Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52711D59C75A005179C2 /* String+Count.swift */; };
+		843E52741D59C7DE005179C2 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52731D59C7DE005179C2 /* String+Size.swift */; };
 		84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465D531D3C74430057A2FE /* BaseTableViewController.swift */; };
 		84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */; };
 		84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF91301CEDBB7E00B4425B /* ViewController.swift */; };
@@ -39,6 +51,18 @@
 		843746CB1D45AEC20014D5C6 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		843746CC1D45AEC20014D5C6 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		843746CD1D45AEC20014D5C6 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		843E523B1D597F8F005179C2 /* Handy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handy.swift; sourceTree = "<group>"; };
+		843E523D1D598982005179C2 /* ScreenInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenInfo.swift; sourceTree = "<group>"; };
+		843E523F1D598B92005179C2 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		843E52631D59BF19005179C2 /* String+Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Attribute.swift"; sourceTree = "<group>"; };
+		843E52641D59BF19005179C2 /* String+Case.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Case.swift"; sourceTree = "<group>"; };
+		843E52651D59BF19005179C2 /* String+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convert.swift"; sourceTree = "<group>"; };
+		843E52661D59BF19005179C2 /* String+Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Index.swift"; sourceTree = "<group>"; };
+		843E52671D59BF19005179C2 /* String+Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
+		843E52681D59BF19005179C2 /* String+Validate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validate.swift"; sourceTree = "<group>"; };
+		843E52691D59BF19005179C2 /* String+Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Base.swift"; sourceTree = "<group>"; };
+		843E52711D59C75A005179C2 /* String+Count.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Count.swift"; sourceTree = "<group>"; };
+		843E52731D59C7DE005179C2 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		84465D531D3C74430057A2FE /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		84EF912B1CEDBB7E00B4425B /* iOSBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +95,10 @@
 		843746C21D45AEC20014D5C6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				843E52621D59BF19005179C2 /* String Extensions */,
+				843E523B1D597F8F005179C2 /* Handy.swift */,
+				843E523D1D598982005179C2 /* ScreenInfo.swift */,
+				843E523F1D598B92005179C2 /* GCD.swift */,
 				843746C31D45AEC20014D5C6 /* Alert */,
 				843746CD1D45AEC20014D5C6 /* Log.swift */,
 				843746C81D45AEC20014D5C6 /* Color.swift */,
@@ -92,6 +120,22 @@
 				84069AB01D4F3C1500C28F96 /* UIViewController+BlockAlert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		843E52621D59BF19005179C2 /* String Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				843E52631D59BF19005179C2 /* String+Attribute.swift */,
+				843E52641D59BF19005179C2 /* String+Case.swift */,
+				843E52651D59BF19005179C2 /* String+Convert.swift */,
+				843E52661D59BF19005179C2 /* String+Index.swift */,
+				843E52671D59BF19005179C2 /* String+Regex.swift */,
+				843E52681D59BF19005179C2 /* String+Validate.swift */,
+				843E52691D59BF19005179C2 /* String+Base.swift */,
+				843E52731D59C7DE005179C2 /* String+Size.swift */,
+				843E52711D59C75A005179C2 /* String+Count.swift */,
+			);
+			path = "String Extensions";
 			sourceTree = "<group>";
 		};
 		84EF91221CEDBB7E00B4425B = {
@@ -206,10 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843E523E1D598982005179C2 /* ScreenInfo.swift in Sources */,
 				84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */,
 				84069AB11D4F3C1500C28F96 /* AlertHelper.swift in Sources */,
 				84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */,
+				843E526A1D59BF19005179C2 /* String+Attribute.swift in Sources */,
+				843E52401D598B92005179C2 /* GCD.swift in Sources */,
 				84069AB21D4F3C1500C28F96 /* UIActionSheet+block.swift in Sources */,
+				843E526D1D59BF19005179C2 /* String+Index.swift in Sources */,
+				843E52721D59C75A005179C2 /* String+Count.swift in Sources */,
+				843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */,
 				843746D41D45AEC20014D5C6 /* Http.swift in Sources */,
 				84069AB41D4F3C1500C28F96 /* UIAlertView+block.swift in Sources */,
 				84069AB31D4F3C1500C28F96 /* UIAlertCotroller+block.swift in Sources */,
@@ -217,9 +267,15 @@
 				843746D71D45AEC20014D5C6 /* Log.swift in Sources */,
 				843746D61D45AEC20014D5C6 /* JSONHelper.swift in Sources */,
 				843746D31D45AEC20014D5C6 /* DeviceInfo.swift in Sources */,
+				843E526B1D59BF19005179C2 /* String+Case.swift in Sources */,
+				843E52701D59BF19005179C2 /* String+Base.swift in Sources */,
+				843E52741D59C7DE005179C2 /* String+Size.swift in Sources */,
 				84EF914C1CEDBC1B00B4425B /* BaseViewController.swift in Sources */,
 				843746D21D45AEC20014D5C6 /* Color.swift in Sources */,
+				843E523C1D597F8F005179C2 /* Handy.swift in Sources */,
+				843E526F1D59BF19005179C2 /* String+Validate.swift in Sources */,
 				84069AB51D4F3C1500C28F96 /* UIViewController+BlockAlert.swift in Sources */,
+				843E526E1D59BF19005179C2 /* String+Regex.swift in Sources */,
 				843746D51D45AEC20014D5C6 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

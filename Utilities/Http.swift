@@ -16,11 +16,12 @@ public enum HttpMethod: String {
 }
 
 /// default host
-#if DEBUG
-let host = "http://www.test.com"
-#else
-let host = "https://www.normal.com"
-#endif
+var host: String {
+    if isDebug {
+        return "http://www.test.com"
+    }
+    return "https://www.normal.com"
+}
 
 public struct Http {
     
