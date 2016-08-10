@@ -1,5 +1,5 @@
 //
-//  UIAlertView+block.swift
+//  UIAlertView+Closure.swift
 //  AlertHelper-Swift
 //
 //  Created by admin on 16/7/20.
@@ -17,7 +17,7 @@ public extension UIAlertView {
                             message: String? = nil,
                             cancelButtonTitle: String? = nil,
                             otherButtonTitles: [String]? = nil,
-                            buttonTappedHandler: AlertButtonTappedBlock? = nil) {
+                            buttonTappedHandler: AlertButtonTappedAction? = nil) {
         
         let alertView = UIAlertView(title: title,
                                     message:message,

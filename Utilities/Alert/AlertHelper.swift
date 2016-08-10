@@ -8,8 +8,8 @@
 
 import UIKit
 
-public typealias AlertButtonTappedBlock = (Int) -> Void;
-var alertButtonTappedHandler: AlertButtonTappedBlock?
+public typealias AlertButtonTappedAction = (Int) -> Void;
+var alertButtonTappedHandler: AlertButtonTappedAction?
 
 public class AlertHelper: NSObject, UIAlertViewDelegate, UIActionSheetDelegate {
     public static let sharedHelper = AlertHelper()

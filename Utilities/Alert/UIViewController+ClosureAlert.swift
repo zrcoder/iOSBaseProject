@@ -1,5 +1,5 @@
 //
-//  UIViewController+BlockAlert.swift
+//  UIViewController+ClosureAlert.swift
 //  AlertHelper-Swift
 //
 //  Created by admin on 16/7/28.
@@ -25,7 +25,7 @@ public extension UIViewController {
                               destructiveButtonTitle: String? = nil,
                               cancelButtonTitle: String? = nil,
                               otherButtonTitles: [String]? = nil,
-                              buttonTappedHandler: AlertButtonTappedBlock? = nil) {
+                              buttonTappedHandler: AlertButtonTappedAction? = nil) {
         
         if #available(iOS 8.0, *) {
             UIAlertController.show(viewController: self,
@@ -62,7 +62,7 @@ public extension UIViewController {
                                 cancelButtonTitle: String? = nil,
                                 otherButtonTitles: [String]? = nil,
                                 sourceRect: CGRect? = nil,
-                                buttonTappedHandler: AlertButtonTappedBlock? = nil) {
+                                buttonTappedHandler: AlertButtonTappedAction? = nil) {
         
         if #available(iOS 8.0, *) {
             UIAlertController.show(.ActionSheet,

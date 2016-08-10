@@ -1,5 +1,5 @@
 //
-//  UIActionSheet+block.swift
+//  UIActionSheet+Closure.swift
 //  AlertHelper-Swift
 //
 //  Created by admin on 16/7/20.
@@ -18,7 +18,7 @@ public extension UIActionSheet {
                               destructiveTitle: String? = nil,
                               cancelButtonTitle: String? = nil,
                               otherButtonTitles: [String]? = nil,
-                              buttonTappedHandler: AlertButtonTappedBlock? = nil) {
+                              buttonTappedHandler: AlertButtonTappedAction? = nil) {
         
         let actionSheet = UIActionSheet(title: title,
                                         delegate: AlertHelper.sharedHelper,

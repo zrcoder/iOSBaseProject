@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		84069AB11D4F3C1500C28F96 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAC1D4F3C1500C28F96 /* AlertHelper.swift */; };
-		84069AB21D4F3C1500C28F96 /* UIActionSheet+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAD1D4F3C1500C28F96 /* UIActionSheet+block.swift */; };
-		84069AB31D4F3C1500C28F96 /* UIAlertCotroller+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+block.swift */; };
-		84069AB41D4F3C1500C28F96 /* UIAlertView+block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAF1D4F3C1500C28F96 /* UIAlertView+block.swift */; };
-		84069AB51D4F3C1500C28F96 /* UIViewController+BlockAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AB01D4F3C1500C28F96 /* UIViewController+BlockAlert.swift */; };
+		84069AB21D4F3C1500C28F96 /* UIActionSheet+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAD1D4F3C1500C28F96 /* UIActionSheet+Closure.swift */; };
+		84069AB31D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift */; };
+		84069AB41D4F3C1500C28F96 /* UIAlertView+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAF1D4F3C1500C28F96 /* UIAlertView+Closure.swift */; };
+		84069AB51D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AB01D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift */; };
 		843746D21D45AEC20014D5C6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C81D45AEC20014D5C6 /* Color.swift */; };
 		843746D31D45AEC20014D5C6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C91D45AEC20014D5C6 /* DeviceInfo.swift */; };
 		843746D41D45AEC20014D5C6 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CA1D45AEC20014D5C6 /* Http.swift */; };
@@ -30,6 +30,9 @@
 		843E52701D59BF19005179C2 /* String+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52691D59BF19005179C2 /* String+Base.swift */; };
 		843E52721D59C75A005179C2 /* String+Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52711D59C75A005179C2 /* String+Count.swift */; };
 		843E52741D59C7DE005179C2 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52731D59C7DE005179C2 /* String+Size.swift */; };
+		843E52F91D5ABF6D005179C2 /* FilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52F81D5ABF6D005179C2 /* FilePath.swift */; };
+		843E52FD1D5AC44F005179C2 /* UIView+ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52FB1D5AC44F005179C2 /* UIView+ParentViewController.swift */; };
+		843E52FE1D5AC44F005179C2 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52FC1D5AC44F005179C2 /* UIView+Snapshot.swift */; };
 		84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465D531D3C74430057A2FE /* BaseTableViewController.swift */; };
 		84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */; };
 		84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF91301CEDBB7E00B4425B /* ViewController.swift */; };
@@ -41,10 +44,10 @@
 
 /* Begin PBXFileReference section */
 		84069AAC1D4F3C1500C28F96 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		84069AAD1D4F3C1500C28F96 /* UIActionSheet+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActionSheet+block.swift"; sourceTree = "<group>"; };
-		84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertCotroller+block.swift"; sourceTree = "<group>"; };
-		84069AAF1D4F3C1500C28F96 /* UIAlertView+block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+block.swift"; sourceTree = "<group>"; };
-		84069AB01D4F3C1500C28F96 /* UIViewController+BlockAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+BlockAlert.swift"; sourceTree = "<group>"; };
+		84069AAD1D4F3C1500C28F96 /* UIActionSheet+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActionSheet+Closure.swift"; sourceTree = "<group>"; };
+		84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertCotroller+Closure.swift"; sourceTree = "<group>"; };
+		84069AAF1D4F3C1500C28F96 /* UIAlertView+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Closure.swift"; sourceTree = "<group>"; };
+		84069AB01D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ClosureAlert.swift"; sourceTree = "<group>"; };
 		843746C81D45AEC20014D5C6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		843746C91D45AEC20014D5C6 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		843746CA1D45AEC20014D5C6 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
@@ -63,6 +66,9 @@
 		843E52691D59BF19005179C2 /* String+Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Base.swift"; sourceTree = "<group>"; };
 		843E52711D59C75A005179C2 /* String+Count.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Count.swift"; sourceTree = "<group>"; };
 		843E52731D59C7DE005179C2 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		843E52F81D5ABF6D005179C2 /* FilePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePath.swift; sourceTree = "<group>"; };
+		843E52FB1D5AC44F005179C2 /* UIView+ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ParentViewController.swift"; sourceTree = "<group>"; };
+		843E52FC1D5AC44F005179C2 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		84465D531D3C74430057A2FE /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		84EF912B1CEDBB7E00B4425B /* iOSBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				843E523B1D597F8F005179C2 /* Handy.swift */,
+				843E52FA1D5AC44F005179C2 /* UIView Extensions */,
 				843E52621D59BF19005179C2 /* String Extensions */,
 				843746C31D45AEC20014D5C6 /* Alert */,
 				843746CD1D45AEC20014D5C6 /* Log.swift */,
@@ -106,6 +113,7 @@
 				843746C91D45AEC20014D5C6 /* DeviceInfo.swift */,
 				843E523D1D598982005179C2 /* ScreenInfo.swift */,
 				843E523F1D598B92005179C2 /* GCD.swift */,
+				843E52F81D5ABF6D005179C2 /* FilePath.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -114,10 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				84069AAC1D4F3C1500C28F96 /* AlertHelper.swift */,
-				84069AAD1D4F3C1500C28F96 /* UIActionSheet+block.swift */,
-				84069AAF1D4F3C1500C28F96 /* UIAlertView+block.swift */,
-				84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+block.swift */,
-				84069AB01D4F3C1500C28F96 /* UIViewController+BlockAlert.swift */,
+				84069AAD1D4F3C1500C28F96 /* UIActionSheet+Closure.swift */,
+				84069AAF1D4F3C1500C28F96 /* UIAlertView+Closure.swift */,
+				84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift */,
+				84069AB01D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -136,6 +144,15 @@
 				843E52711D59C75A005179C2 /* String+Count.swift */,
 			);
 			path = "String Extensions";
+			sourceTree = "<group>";
+		};
+		843E52FA1D5AC44F005179C2 /* UIView Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				843E52FB1D5AC44F005179C2 /* UIView+ParentViewController.swift */,
+				843E52FC1D5AC44F005179C2 /* UIView+Snapshot.swift */,
+			);
+			path = "UIView Extensions";
 			sourceTree = "<group>";
 		};
 		84EF91221CEDBB7E00B4425B = {
@@ -256,25 +273,28 @@
 				84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */,
 				843E526A1D59BF19005179C2 /* String+Attribute.swift in Sources */,
 				843E52401D598B92005179C2 /* GCD.swift in Sources */,
-				84069AB21D4F3C1500C28F96 /* UIActionSheet+block.swift in Sources */,
+				84069AB21D4F3C1500C28F96 /* UIActionSheet+Closure.swift in Sources */,
 				843E526D1D59BF19005179C2 /* String+Index.swift in Sources */,
+				843E52FE1D5AC44F005179C2 /* UIView+Snapshot.swift in Sources */,
 				843E52721D59C75A005179C2 /* String+Count.swift in Sources */,
 				843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */,
 				843746D41D45AEC20014D5C6 /* Http.swift in Sources */,
-				84069AB41D4F3C1500C28F96 /* UIAlertView+block.swift in Sources */,
-				84069AB31D4F3C1500C28F96 /* UIAlertCotroller+block.swift in Sources */,
+				84069AB41D4F3C1500C28F96 /* UIAlertView+Closure.swift in Sources */,
+				84069AB31D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift in Sources */,
 				84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */,
 				843746D71D45AEC20014D5C6 /* Log.swift in Sources */,
 				843746D61D45AEC20014D5C6 /* JSONHelper.swift in Sources */,
+				843E52F91D5ABF6D005179C2 /* FilePath.swift in Sources */,
 				843746D31D45AEC20014D5C6 /* DeviceInfo.swift in Sources */,
 				843E526B1D59BF19005179C2 /* String+Case.swift in Sources */,
 				843E52701D59BF19005179C2 /* String+Base.swift in Sources */,
 				843E52741D59C7DE005179C2 /* String+Size.swift in Sources */,
 				84EF914C1CEDBC1B00B4425B /* BaseViewController.swift in Sources */,
+				843E52FD1D5AC44F005179C2 /* UIView+ParentViewController.swift in Sources */,
 				843746D21D45AEC20014D5C6 /* Color.swift in Sources */,
 				843E523C1D597F8F005179C2 /* Handy.swift in Sources */,
 				843E526F1D59BF19005179C2 /* String+Validate.swift in Sources */,
-				84069AB51D4F3C1500C28F96 /* UIViewController+BlockAlert.swift in Sources */,
+				84069AB51D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift in Sources */,
 				843E526E1D59BF19005179C2 /* String+Regex.swift in Sources */,
 				843746D51D45AEC20014D5C6 /* ImageHelper.swift in Sources */,
 			);
