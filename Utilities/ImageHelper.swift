@@ -51,3 +51,16 @@ public func imageFromSource(image : UIImage, compressedToSize size : CGSize) -> 
     UIGraphicsEndImageContext()
     return newImage
 }
+
+public func imageFromSource(image: UIImage, frame: CGRect) -> UIImage? {
+    let imageRef = CGImageCreateWithImageInRect(image.CGImage, frame)
+    if let ref = imageRef {
+        let image = UIImage(CGImage: ref)
+        return image
+    }
+    return nil
+}
+
+public var screenShot: UIImage? {
+    return UIApplication.sharedApplication().keyWindow?.snapshot
+}
