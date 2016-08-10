@@ -8,6 +8,9 @@
 
 import Foundation
 
+/// A little work of gcd wrapper, we can find a wonderful work with this link:
+/// https://github.com/JohnEstropia/GCDKit
+
 public typealias DispatchQueue = dispatch_queue_t
 
 public var gcdMainQueue: DispatchQueue {
