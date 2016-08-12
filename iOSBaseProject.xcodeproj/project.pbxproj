@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84069AB11D4F3C1500C28F96 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAC1D4F3C1500C28F96 /* AlertHelper.swift */; };
-		84069AB21D4F3C1500C28F96 /* UIActionSheet+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAD1D4F3C1500C28F96 /* UIActionSheet+Closure.swift */; };
-		84069AB31D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift */; };
-		84069AB41D4F3C1500C28F96 /* UIAlertView+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AAF1D4F3C1500C28F96 /* UIAlertView+Closure.swift */; };
-		84069AB51D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84069AB01D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift */; };
 		843746D21D45AEC20014D5C6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C81D45AEC20014D5C6 /* Color.swift */; };
 		843746D31D45AEC20014D5C6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746C91D45AEC20014D5C6 /* DeviceInfo.swift */; };
 		843746D41D45AEC20014D5C6 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843746CA1D45AEC20014D5C6 /* Http.swift */; };
@@ -40,14 +35,11 @@
 		84EF91361CEDBB7E00B4425B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EF91351CEDBB7E00B4425B /* Assets.xcassets */; };
 		84EF91391CEDBB7E00B4425B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF91371CEDBB7E00B4425B /* LaunchScreen.storyboard */; };
 		84EF914C1CEDBC1B00B4425B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF91411CEDBC1B00B4425B /* BaseViewController.swift */; };
+		84FC67BE1D5DD276009A4A04 /* ChainableAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC67BC1D5DD276009A4A04 /* ChainableAlert.swift */; };
+		84FC67BF1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC67BD1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84069AAC1D4F3C1500C28F96 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
-		84069AAD1D4F3C1500C28F96 /* UIActionSheet+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActionSheet+Closure.swift"; sourceTree = "<group>"; };
-		84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertCotroller+Closure.swift"; sourceTree = "<group>"; };
-		84069AAF1D4F3C1500C28F96 /* UIAlertView+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertView+Closure.swift"; sourceTree = "<group>"; };
-		84069AB01D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ClosureAlert.swift"; sourceTree = "<group>"; };
 		843746C81D45AEC20014D5C6 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		843746C91D45AEC20014D5C6 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		843746CA1D45AEC20014D5C6 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
@@ -78,6 +70,8 @@
 		84EF91381CEDBB7E00B4425B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84EF913A1CEDBB7E00B4425B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EF91411CEDBC1B00B4425B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		84FC67BC1D5DD276009A4A04 /* ChainableAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainableAlert.swift; sourceTree = "<group>"; };
+		84FC67BD1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChainableAlert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				843E523B1D597F8F005179C2 /* Handy.swift */,
+				84FC67BB1D5DD276009A4A04 /* ChainableAlert */,
 				843E52FA1D5AC44F005179C2 /* UIView Extensions */,
 				843E52621D59BF19005179C2 /* String Extensions */,
-				843746C31D45AEC20014D5C6 /* Alert */,
 				843746CD1D45AEC20014D5C6 /* Log.swift */,
 				843746C81D45AEC20014D5C6 /* Color.swift */,
 				843746CA1D45AEC20014D5C6 /* Http.swift */,
@@ -116,18 +110,6 @@
 				843E52F81D5ABF6D005179C2 /* FilePath.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		843746C31D45AEC20014D5C6 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				84069AAC1D4F3C1500C28F96 /* AlertHelper.swift */,
-				84069AAD1D4F3C1500C28F96 /* UIActionSheet+Closure.swift */,
-				84069AAF1D4F3C1500C28F96 /* UIAlertView+Closure.swift */,
-				84069AAE1D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift */,
-				84069AB01D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift */,
-			);
-			path = Alert;
 			sourceTree = "<group>";
 		};
 		843E52621D59BF19005179C2 /* String Extensions */ = {
@@ -194,6 +176,15 @@
 				84465D531D3C74430057A2FE /* BaseTableViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		84FC67BB1D5DD276009A4A04 /* ChainableAlert */ = {
+			isa = PBXGroup;
+			children = (
+				84FC67BD1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift */,
+				84FC67BC1D5DD276009A4A04 /* ChainableAlert.swift */,
+			);
+			path = ChainableAlert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,18 +260,15 @@
 			files = (
 				843E523E1D598982005179C2 /* ScreenInfo.swift in Sources */,
 				84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */,
-				84069AB11D4F3C1500C28F96 /* AlertHelper.swift in Sources */,
 				84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */,
 				843E526A1D59BF19005179C2 /* String+Attribute.swift in Sources */,
 				843E52401D598B92005179C2 /* GCD.swift in Sources */,
-				84069AB21D4F3C1500C28F96 /* UIActionSheet+Closure.swift in Sources */,
 				843E526D1D59BF19005179C2 /* String+Index.swift in Sources */,
+				84FC67BF1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift in Sources */,
 				843E52FE1D5AC44F005179C2 /* UIView+Snapshot.swift in Sources */,
 				843E52721D59C75A005179C2 /* String+Count.swift in Sources */,
 				843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */,
 				843746D41D45AEC20014D5C6 /* Http.swift in Sources */,
-				84069AB41D4F3C1500C28F96 /* UIAlertView+Closure.swift in Sources */,
-				84069AB31D4F3C1500C28F96 /* UIAlertCotroller+Closure.swift in Sources */,
 				84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */,
 				843746D71D45AEC20014D5C6 /* Log.swift in Sources */,
 				843746D61D45AEC20014D5C6 /* JSONHelper.swift in Sources */,
@@ -289,12 +277,12 @@
 				843E526B1D59BF19005179C2 /* String+Case.swift in Sources */,
 				843E52701D59BF19005179C2 /* String+Base.swift in Sources */,
 				843E52741D59C7DE005179C2 /* String+Size.swift in Sources */,
+				84FC67BE1D5DD276009A4A04 /* ChainableAlert.swift in Sources */,
 				84EF914C1CEDBC1B00B4425B /* BaseViewController.swift in Sources */,
 				843E52FD1D5AC44F005179C2 /* UIView+ParentViewController.swift in Sources */,
 				843746D21D45AEC20014D5C6 /* Color.swift in Sources */,
 				843E523C1D597F8F005179C2 /* Handy.swift in Sources */,
 				843E526F1D59BF19005179C2 /* String+Validate.swift in Sources */,
-				84069AB51D4F3C1500C28F96 /* UIViewController+ClosureAlert.swift in Sources */,
 				843E526E1D59BF19005179C2 /* String+Regex.swift in Sources */,
 				843746D51D45AEC20014D5C6 /* ImageHelper.swift in Sources */,
 			);
