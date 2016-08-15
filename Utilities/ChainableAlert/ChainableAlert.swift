@@ -8,9 +8,6 @@
 
 import UIKit
 
-public typealias AlertButtonAction = (ChainableAlert) -> Void
-public typealias AlertTextFieldConfigurationHandler = (UITextField) -> Void
-
 /**
  *  Chainable use to show an alert.
  
@@ -54,19 +51,24 @@ public typealias AlertTextFieldConfigurationHandler = (UITextField) -> Void
  .show(animated: true)
  
  */
+
+
+public typealias AlertButtonAction = (ChainableAlert) -> Void
+public typealias AlertTextFieldConfigurationHandler = (UITextField) -> Void
+
 @available (iOS 8, *)
 public class ChainableAlert {
     
     // Mark: init
     
     /**
-     Create alert, actually UIAlertView if the device is below iOS 8 or UIAlertController for iOS 8 and later
+     Create an alert
      */
     public static func alert(title title: String? = nil, message: String? = nil) -> ChainableAlert {
         return ChainableAlert(title: title, message: message, style: .Alert)
     }
     /**
-     Create alert, actually UIActionSheet if the device is below iOS 8 or UIAlertController for iOS 8 and later
+     Create an action sheet
      */
     public static func actionSheet(title title: String? = nil, message: String? = nil) -> ChainableAlert {
         return ChainableAlert(title: title, message: message, style: .ActionSheet)
@@ -87,7 +89,7 @@ public class ChainableAlert {
     }
     
     /**
-     Add a destructive button to the alert, we can add more than 1 for iOS 8 and later, BUT, if below iOS 8, this func will do nothing for alertView, and only one destructive button will added for actionSheet
+     Add a destructive button to the alert
      */
     public func destructiveButton(title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
         let entity = AlertButtonEntity(title: title, action: handler == nil ? {_ in} : handler!)
@@ -108,7 +110,7 @@ public class ChainableAlert {
     }
     
     /**
-     Add a textField to the alert, if is under iOS 8.0 or is action sheet, no use.
+     Add a textField to the alert, if is action sheet, no use.
      */
     public func textField(configuration configuration: AlertTextFieldConfigurationHandler? = nil) -> ChainableAlert {
         guard style == .Alert else {
@@ -122,20 +124,20 @@ public class ChainableAlert {
         return self
     }
     
+    /// textFields added to the alert.
     public var textFields: [UITextField]?
     
     // Mark: show
     
     /**
      Show the alert
-     - parameter viewController: If UIAlertController used, we will use it to present, and if UIActionSheet is used, it's view will be used
-     - parameter fromPosition:   If UIAlertController used, and style is action sheet, and device is iPad, we can set the source point for the popover controller
-     - parameter animated:       If below iOS 8 , no use.
-     - parameter completion:     If below iOS 8 , no use.
+     - parameter viewController: We will use it to present
+     - parameter fromPosition:   If is action sheet, and device is iPad, we can set the source point for the popover controller
      */
     public func show(viewController: UIViewController? = nil, animated:Bool, fromPosition:(x: CGFloat, y: CGFloat)? = nil, completion: (() -> Void)? = nil) {
         let alertStyle: UIAlertControllerStyle = style == .Alert ? .Alert : .ActionSheet
         let alertController = UIAlertController(title: title, message: message, preferredStyle: alertStyle)
+        
         if let entities = normalEntities {
             for entity in entities {
                 let action = UIAlertAction(title: entity.title, style: .Default) { action in
@@ -145,6 +147,7 @@ public class ChainableAlert {
                 alertController.addAction(action)
             }
         }
+        
         if let entities = destructiveEntities {
             for entity in entities {
                 let action = UIAlertAction(title: entity.title, style: .Destructive) { action in
@@ -154,6 +157,7 @@ public class ChainableAlert {
                 alertController.addAction(action)
             }
         }
+        
         if let entity = cancleEntity {
             let action = UIAlertAction(title: entity.title, style: .Cancel) { action in
                 let buttonAction = entity.action
