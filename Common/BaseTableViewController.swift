@@ -28,6 +28,7 @@ class BaseTableViewController: UITableViewController {
     }
     
     func noMoreInfoAction() -> Void {
-        self.showAlertView("没有更多信息了", cancelButtonTitle:"知道了")
+        self.alert(message: "没有更多信息了")
+        .cancleButton("知道了")
     }
 }
