@@ -62,7 +62,6 @@ public struct Http {
             
             let request = NSMutableURLRequest(URL: url)
             request.timeoutInterval = 30
-            request.cachePolicy = .ReturnCacheDataElseLoad
             request.HTTPMethod = method.rawValue;
             if let parData = dataWithJSON(parameters) {
                 request.HTTPBody = parData
