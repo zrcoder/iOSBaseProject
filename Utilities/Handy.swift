@@ -7,7 +7,7 @@
 //
 
 public var isDebug: Bool {
-    #if DEBUG  //tip : build settings -> Swift Compiler - Custom Flags -> Other Swift Flags -> debug = -D DEBUG
+    #if DEBUG  //Tip : build settings -> Swift Compiler - Custom Flags -> Other Swift Flags -> debug = -D DEBUG
         return true
     #else
         return false
