@@ -6,21 +6,12 @@
 //  Copyright © 2016年 Ding. All rights reserved.
 //
 
+
 import UIKit
+
 public typealias Color = UIColor
 
 public extension Color {
-    
-    /**
-     Creates a color of random red, green and blue
-     - returns: random color
-     */
-    public static func randomColor() -> Color {
-        let red = CGFloat(arc4random_uniform(256)) / 255.0
-        let green = CGFloat(arc4random_uniform(256)) / 255.0
-        let blue = CGFloat(arc4random_uniform(256)) / 255.0
-        return self.init(red: red, green: green, blue: blue, alpha: 1)
-    }
     
     /**
      Creates a color from an hex integer (e.g. 0x3498db).

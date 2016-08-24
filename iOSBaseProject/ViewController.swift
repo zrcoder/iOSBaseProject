@@ -13,7 +13,12 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dLog("Hello, world!")
-        view.backgroundColor = Color(hexString: "f15352")
+        
+        let array = [5, 9, 4, 2, 8]
+        
+        for _ in 1...100 {
+            log(array[2...3].randomItem)
+        }
     }
 
     override func didReceiveMemoryWarning() {
