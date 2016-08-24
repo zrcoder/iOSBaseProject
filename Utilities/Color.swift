@@ -23,11 +23,27 @@ public extension Color {
     }
     
     /**
-     Creates a color from an hex string (e.g. "#3498db").
+     Creates a color from an hex integer (e.g. 0x3498db).
+     - parameter hex: A hexa-decimal UInt32 that represents a color.
+     - parameter alpha: alpha, default is 1
+     */
+    public convenience init(hex: UInt32, alpha: CGFloat = 1) {
+        let mask = 0x000000FF
+        
+        let red = CGFloat(Int(hex >> 16) & mask) / 255
+        let green = CGFloat(Int(hex >> 8) & mask) / 255
+        let blue = CGFloat(Int(hex) & mask) / 255
+        
+        self.init(red:red, green:green, blue:blue, alpha:alpha)
+    }
+    
+    /**
+     Creates a color from an hex string (e.g. "3498db" or "#3498db").
      If the given hex string is invalid the initialiser will create a black color.
      - parameter hexString: A hexa-decimal color string representation.
+     - parameter alpha: alpha, default is 1
      */
-    public convenience init(hexString: String) {
+    public convenience init(hexString: String, alpha: CGFloat = 1) {
         let scanner   = NSScanner(string: hexString)
         
         if (hexString.hasPrefix("#")) {
@@ -37,28 +53,10 @@ public extension Color {
         var color: UInt32 = 0
         
         if scanner.scanHexInt(&color) {
-            self.init(hex: color)
+            self.init(hex: color, alpha: alpha)
         } else {
-            self.init(hex: 0x000000)
+            self.init(hex: 0x000000, alpha: alpha)
         }
-    }
-    
-    /**
-     Creates a color from an hex integer (e.g. 0x3498db).
-     - parameter hex: A hexa-decimal UInt32 that represents a color.
-     */
-    public convenience init(hex: UInt32) {
-        let mask = 0x000000FF
-        
-        let r = Int(hex >> 16) & mask
-        let g = Int(hex >> 8) & mask
-        let b = Int(hex) & mask
-        
-        let red   = CGFloat(r) / 255
-        let green = CGFloat(g) / 255
-        let blue  = CGFloat(b) / 255
-        
-        self.init(red:red, green:green, blue:blue, alpha:1)
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 
 public extension String {
     /// Returns hight of rendered string
-    func height(width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
+    public func height(width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
         var attributes: [String: AnyObject] = [NSFontAttributeName: font]
         if lineBreakMode != nil {
             let paragraphStyle = NSMutableParagraphStyle()

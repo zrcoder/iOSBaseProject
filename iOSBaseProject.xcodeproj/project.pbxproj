@@ -29,6 +29,7 @@
 		843E52FD1D5AC44F005179C2 /* UIView+ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52FB1D5AC44F005179C2 /* UIView+ParentViewController.swift */; };
 		843E52FE1D5AC44F005179C2 /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52FC1D5AC44F005179C2 /* UIView+Snapshot.swift */; };
 		84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465D531D3C74430057A2FE /* BaseTableViewController.swift */; };
+		84C3BF021D6D28D100817686 /* UIImage+CutCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3BF011D6D28D100817686 /* UIImage+CutCircle.swift */; };
 		84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */; };
 		84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF91301CEDBB7E00B4425B /* ViewController.swift */; };
 		84EF91341CEDBB7E00B4425B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF91321CEDBB7E00B4425B /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		843E52FB1D5AC44F005179C2 /* UIView+ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ParentViewController.swift"; sourceTree = "<group>"; };
 		843E52FC1D5AC44F005179C2 /* UIView+Snapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		84465D531D3C74430057A2FE /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		84C3BF011D6D28D100817686 /* UIImage+CutCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CutCircle.swift"; sourceTree = "<group>"; };
 		84EF912B1CEDBB7E00B4425B /* iOSBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EF91301CEDBB7E00B4425B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		843746C21D45AEC20014D5C6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				84C3BF001D6D28B900817686 /* UIImage Extensions */,
 				843E523B1D597F8F005179C2 /* Handy.swift */,
 				84FC67BB1D5DD276009A4A04 /* ChainableAlert */,
 				843E52FA1D5AC44F005179C2 /* UIView Extensions */,
@@ -135,6 +138,14 @@
 				843E52FC1D5AC44F005179C2 /* UIView+Snapshot.swift */,
 			);
 			path = "UIView Extensions";
+			sourceTree = "<group>";
+		};
+		84C3BF001D6D28B900817686 /* UIImage Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84C3BF011D6D28D100817686 /* UIImage+CutCircle.swift */,
+			);
+			path = "UIImage Extensions";
 			sourceTree = "<group>";
 		};
 		84EF91221CEDBB7E00B4425B = {
@@ -266,6 +277,7 @@
 				843E526D1D59BF19005179C2 /* String+Index.swift in Sources */,
 				84FC67BF1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift in Sources */,
 				843E52FE1D5AC44F005179C2 /* UIView+Snapshot.swift in Sources */,
+				84C3BF021D6D28D100817686 /* UIImage+CutCircle.swift in Sources */,
 				843E52721D59C75A005179C2 /* String+Count.swift in Sources */,
 				843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */,
 				843746D41D45AEC20014D5C6 /* Http.swift in Sources */,
