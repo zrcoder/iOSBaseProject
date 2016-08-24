@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Ding. All rights reserved.
 //
 
-import UIKit
-
 // MARK: - Extensions of Int, Bool, Float, Double, CGFloat, Color, Array, ArraySlice to add vars or methods about random.
+
+import UIKit
 
 public extension Int {
     /**
@@ -73,7 +73,6 @@ public extension Float {
 }
 
 public extension CGFloat {
-    
     /**
      - parameter lower: default -> 0
      - parameter upper: default -> 100
@@ -90,8 +89,7 @@ public extension CGFloat {
 }
 
 public extension Color {
-    
-    /// A color of random red, green, blue, alpha is 1.
+    /// A color of random red, green and blue, alpha is 1.
     public static var random: Color {
         return Color(red: CGFloat.random(0, 1),
                      green: CGFloat.random(0, 1),
@@ -101,22 +99,17 @@ public extension Color {
 }
 
 public extension Array {
-    
     /// a random item in array
     public var randomItem: Element {
         let index = Int(arc4random_uniform(UInt32(self.count)))
         return self[index]
     }
-    
 }
 
 public extension ArraySlice {
-    
     /// a random item in array slice
     public var randomItem: Element {
         let index = Int.random(self.startIndex, self.endIndex - 1)
         return self[index]
     }
-    
 }
-
