@@ -47,7 +47,7 @@ public extension Double {
      - returns: lower <= value <= upper
      */
     public static func random(lower: Double = 0, _ upper: Double = 100) -> Double {
-        return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+        return (Double(arc4random()) / Double(UINT32_MAX)) * (upper - lower) + lower
     }
     
     /// if self == 0, 0; else if self > 0, 0 <= value <= self; else self <= value <= 0
@@ -63,7 +63,7 @@ public extension Float {
      - returns: lower <= value <= upper
      */
     public static func random(lower: Float = 0, _ upper: Float = 100) -> Float {
-        return (Float(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+        return (Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
     }
     
     /// if self == 0, 0; else if self > 0, 0 <= value <= self; else self <= value <= 0
@@ -79,7 +79,7 @@ public extension CGFloat {
      - returns: lower <= value <= upper
      */
     public static func random(lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
-        return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
+        return CGFloat(CGFloat(arc4random()) / CGFloat(UINT32_MAX)) * (upper - lower) + lower
     }
     
     /// if self == 0, 0; else if self > 0, 0 <= value <= self; else self <= value <= 0
