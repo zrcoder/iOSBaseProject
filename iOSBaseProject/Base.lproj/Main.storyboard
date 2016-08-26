@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="2285" y="412"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="65f-gL-8Ng">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1U-re-J1R" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1U-re-J1R" customClass="BaseNavigationController" customModule="iOSBaseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YoK-Vh-c4R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

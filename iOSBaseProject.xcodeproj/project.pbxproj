@@ -31,6 +31,7 @@
 		84465D541D3C74430057A2FE /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465D531D3C74430057A2FE /* BaseTableViewController.swift */; };
 		84C3BF021D6D28D100817686 /* UIImage+CutCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3BF011D6D28D100817686 /* UIImage+CutCircle.swift */; };
 		84C3BF041D6D371500817686 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3BF031D6D371500817686 /* Random.swift */; };
+		84C3BF131D6FC88100817686 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3BF121D6FC88100817686 /* BaseNavigationController.swift */; };
 		84EF912F1CEDBB7E00B4425B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */; };
 		84EF91311CEDBB7E00B4425B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF91301CEDBB7E00B4425B /* ViewController.swift */; };
 		84EF91341CEDBB7E00B4425B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF91321CEDBB7E00B4425B /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		84465D531D3C74430057A2FE /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		84C3BF011D6D28D100817686 /* UIImage+CutCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CutCircle.swift"; sourceTree = "<group>"; };
 		84C3BF031D6D371500817686 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		84C3BF121D6FC88100817686 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		84EF912B1CEDBB7E00B4425B /* iOSBaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EF912E1CEDBB7E00B4425B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EF91301CEDBB7E00B4425B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				84EF91411CEDBC1B00B4425B /* BaseViewController.swift */,
 				84465D531D3C74430057A2FE /* BaseTableViewController.swift */,
+				84C3BF121D6FC88100817686 /* BaseNavigationController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				843E526D1D59BF19005179C2 /* String+Index.swift in Sources */,
 				84FC67BF1D5DD276009A4A04 /* UIViewController+ChainableAlert.swift in Sources */,
 				843E52FE1D5AC44F005179C2 /* UIView+Snapshot.swift in Sources */,
+				84C3BF131D6FC88100817686 /* BaseNavigationController.swift in Sources */,
 				84C3BF021D6D28D100817686 /* UIImage+CutCircle.swift in Sources */,
 				843E52721D59C75A005179C2 /* String+Count.swift in Sources */,
 				843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */,

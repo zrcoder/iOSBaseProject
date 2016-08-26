@@ -13,56 +13,39 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    // Some methods will be used frequently
-    
-    /**
-     show aleart to dial a number
-     
-     - parameter number: the number you want to dial
-     */
-    func alertToDialNumber(number : String?) {
-        if let phone = number {
-            let string = "tel:" + phone
-            dialWebView.loadRequest(NSURLRequest(URL: NSURL(string: string)!))
-        }
-    }
-    private let dialWebView  = UIWebView()
+    // Mark: Some methods will be used frequently
     
     
-    // Some methods can be overridden
+    // Mark:Some methods can be overridden
     func backButtonTapped() -> Void {
         navigationController?.popViewControllerAnimated(true)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //custom some appearences like navigation bar and so no
+        view.backgroundColor = Color.whiteColor()
         
-        if self != self.navigationController?.viewControllers[0] {
-            let button = UIButton(type: .Custom)
-            button.frame = CGRectMake(0, 0, 44, 44)
-            button.setImage(UIImage(named: "arrowLeft"), forState: .Normal)
-            button.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
-            let buttonItem = UIBarButtonItem(customView: button)
-            let spacerItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
-            spacerItem.width = -18;
-            navigationItem.leftBarButtonItems = [spacerItem, buttonItem]
-            
+        //custom back button. --if you want more customs, see BaseNavigationController.swift
+        if let viewControllers = navigationController?.viewControllers {
+            if viewControllers.count > 0 && self != viewControllers[0] {
+                navigationItem.leftBarButtonItems = leftBarButtonItems
+            }
         }
-        
-        let titleAttributes = [NSForegroundColorAttributeName:UIColor(hex:0x474747),
-                               NSFontAttributeName:UIFont.systemFontOfSize(15)]
-        navigationController?.navigationBar.titleTextAttributes = titleAttributes
-        
-        let screenWidth = UIScreen.mainScreen().bounds.size.width
-        navigationController?.navigationBar.setBackgroundImage(imageWithColor(UIColor(hex:0xbbeebb), size: CGSizeMake(screenWidth, 64)), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = imageWithColor(UIColor.clearColor(), size: CGSizeMake(screenWidth, 1))
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private var leftBarButtonItems: [UIBarButtonItem] {
+        let button = UIButton(type: .Custom)
+        button.frame = CGRectMake(0, 0, 44, 44)
+        button.setImage(UIImage(named: "arrowLeft"), forState: .Normal)
+        button.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
+        let buttonItem = UIBarButtonItem(customView: button)
+        let spacerItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
+        spacerItem.width = -18;
+        return [spacerItem, buttonItem]
     }
     
 }
