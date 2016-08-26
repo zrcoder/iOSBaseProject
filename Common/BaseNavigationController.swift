@@ -58,7 +58,6 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
         return true
     }
     
-    
     private var duringPushAnimation = false
     private var realDelegate: UINavigationControllerDelegate?
     

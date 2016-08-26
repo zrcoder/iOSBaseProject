@@ -9,7 +9,7 @@
 import UIKit
 
 //  BaseViewController should be super class of most viewControllers in project
-//  we define general appearences and implement some important method here
+//  we define general appearences and implement some important methods here
 
 class BaseViewController: UIViewController {
     
