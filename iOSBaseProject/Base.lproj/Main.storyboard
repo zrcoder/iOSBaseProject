@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2J-S8-daH">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="283" y="285" width="35" height="30"/>
+                                <state key="normal" title="Push"/>
                                 <connections>
-                                    <segue destination="gzd-M1-Bfu" kind="show" id="FYl-q1-CEi"/>
+                                    <segue destination="kWj-Vh-3iA" kind="show" id="dB9-N4-enS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -35,12 +35,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="412"/>
+            <point key="canvasLocation" x="1440" y="412"/>
+        </scene>
+        <!--Base View Controller-->
+        <scene sceneID="TON-AC-5Mn">
+            <objects>
+                <viewController id="kWj-Vh-3iA" customClass="BaseViewController" customModule="iOSBaseProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NvT-yi-BdU"/>
+                        <viewControllerLayoutGuide type="bottom" id="4qO-Ti-iRt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VhZ-yl-FHV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-jf-I0C">
+                                <rect key="frame" x="283" y="285" width="35" height="30"/>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <segue destination="gzd-M1-Bfu" kind="show" id="dki-Hw-N0P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lpd-jf-I0C" firstAttribute="centerX" secondItem="VhZ-yl-FHV" secondAttribute="centerX" id="X8P-L3-ASt"/>
+                            <constraint firstItem="lpd-jf-I0C" firstAttribute="centerY" secondItem="VhZ-yl-FHV" secondAttribute="centerY" id="l5q-OU-YkB"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RNG-du-PcZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2069" y="412"/>
         </scene>
         <!--Detail-->
         <scene sceneID="8jd-fj-j4B">
             <objects>
-                <viewController id="gzd-M1-Bfu" customClass="BaseViewController" customModule="iOSBaseProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gzd-M1-Bfu" customClass="DetailViewController" customModule="iOSBaseProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Us1-Cl-0DP"/>
                         <viewControllerLayoutGuide type="bottom" id="4ML-IW-ujo"/>
@@ -54,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGk-K5-kbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2285" y="412"/>
+            <point key="canvasLocation" x="2687" y="412"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="65f-gL-8Ng">
