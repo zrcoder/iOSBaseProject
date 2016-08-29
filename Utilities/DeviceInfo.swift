@@ -242,9 +242,12 @@ public struct DeviceInfo {
         }
         return uuid
     }
-    
-    //  Private
-    private static func p_systemInfomation(type: Int32) -> Int {
+
+}
+
+//Mark: private
+private extension DeviceInfo {
+    static func p_systemInfomation(type: Int32) -> Int {
         var size: size_t = sizeof(Int)
         var results: Int = 0
         var mib: [Int32] = [CTL_HW, type]
@@ -252,7 +255,7 @@ public struct DeviceInfo {
         return results
     }
     
-    private static func p_generateUUID() -> String {
+    static func p_generateUUID() -> String {
         var uuidRef = CFUUIDCreate(nil)
         let uuidStringRef = CFUUIDCreateString(nil, uuidRef)
         if uuidRef != nil {
