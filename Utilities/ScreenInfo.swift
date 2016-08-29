@@ -8,9 +8,14 @@
 
 import UIKit
 
+/// Bounds of the main screen
+public var screenBounds: CGRect {
+    return UIScreen.mainScreen().bounds
+}
+
 /// Size of the main screen
 public var screenSize: CGSize {
-    return UIScreen.mainScreen().bounds.size
+    return screenBounds.size
 }
 
 /// Width of the main screen
