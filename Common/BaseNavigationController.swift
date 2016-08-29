@@ -24,17 +24,16 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
         if delegate == nil {
             delegate = self
         }
-        interactivePopGestureRecognizer?.delegate = self
-        
+        interactivePopGestureRecognizer?.delegate = self        
         
         // Mark: custom the navigation bar
         // (It's better to custom the back button in BaseViewController, because you can override the button action in a single view controller. --see BaseViewController.swift)
         
         // Title
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Color(hex:0x474747), NSFontAttributeName: UIFont.systemFontOfSize(15)]
+        navigationBar.titleTextAttributes = navigationBarTitleTextAttributes
         // Background and bottom line
-        navigationBar.setBackgroundImage(imageWithColor(Color(hex: 0xbbeebb), size: CGSize(width: screenWidth, height: 64)), forBarMetrics: .Default)
-        navigationBar.shadowImage = imageWithColor(Color.clearColor(), size: CGSize(width: screenWidth, height: 1))
+        navigationBar.setBackgroundImage(imageWithColor(navigationBarBackgroundColor, size: CGSize(width: screenWidth, height: 64)), forBarMetrics: .Default)
+        navigationBar.shadowImage = imageWithColor(navigationBarShadowImageColor, size: CGSize(width: screenWidth, height: 1))
     }
     
     // Mark: UINavigationControllerDelegate
