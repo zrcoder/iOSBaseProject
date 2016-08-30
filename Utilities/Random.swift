@@ -33,6 +33,27 @@ public extension Int {
     }
 }
 
+public extension UInt32 {
+    /**
+     - parameter lower: default -> 0
+     - parameter upper: default -> 100
+     - returns: lower <= value <= upper
+     */
+    public static func random(lower: UInt32 = 0, _ upper: UInt32 = 100) -> UInt32 {
+        return lower + UInt32(arc4random_uniform(upper - lower + 1))
+    }
+    /**
+     - returns: range.startIndex <= value <= range.endIndex
+     */
+    public static func random(range: Range<UInt32>) -> UInt32 {
+        return UInt32.random(range.startIndex, range.endIndex - 1)
+    }
+    /// 0 <= value <= self
+    public var random: UInt32 {
+        return UInt32.random(0, self)
+    }
+}
+
 public extension Bool {
     /// true or false, randomly~
     public static var random: Bool {
