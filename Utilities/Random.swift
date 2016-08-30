@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Ding. All rights reserved.
 //
 
-// MARK: - Extensions of Int, Bool, Float, Double, CGFloat, Color, Array, ArraySlice to add vars or methods about random.
+// MARK: - Extensions of Int, UInt32, Bool, Float, Double, CGFloat, UIColor, CGPoint, Array, ArraySlice to add vars or methods about random.
 
 import UIKit
 
@@ -40,7 +40,8 @@ public extension UInt32 {
      - returns: lower <= value <= upper
      */
     public static func random(lower: UInt32 = 0, _ upper: UInt32 = 100) -> UInt32 {
-        return lower + UInt32(arc4random_uniform(upper - lower + 1))
+        assert(upper >= lower, "UInt32.random(lower:upper:) - upper should >= lower")
+        return lower + arc4random_uniform(upper - lower + 1)
     }
     /**
      - returns: range.startIndex <= value <= range.endIndex
@@ -118,6 +119,20 @@ public extension Color {
                      alpha: 1)
     }
 }
+
+public extension CGPoint {
+    /**
+     - parameter lower: default -> 0
+     - parameter upper: default -> 100
+     - returns: lower.x <= value.x <= upper.x && lower.y <= value.y <= upper.y
+     */
+    public static func random(lower: CGFloat = 0, _ upper: CGFloat = 100) -> CGPoint {
+        let x = CGFloat.random(lower, upper)
+        let y = CGFloat.random(lower, lower)
+        return CGPoint(x: x, y: y)
+    }
+}
+
 
 public extension Array {
     /// a random item in array
