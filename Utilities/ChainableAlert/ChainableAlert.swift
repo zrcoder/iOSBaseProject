@@ -13,7 +13,7 @@ import UIKit
  
  e.g.
  
- 1.
+ ①
  ChainableAlert
  .actionSheet(title: "Title", message: "message")
  .normalButton("normal1")
@@ -32,7 +32,7 @@ import UIKit
     print("showd!")
  }
  
- 2.
+ ②
  ChainableAlert
  .alert(title: "Title", message: "message")
  .textField(configuration: { textField in

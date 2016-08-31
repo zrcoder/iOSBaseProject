@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Ding. All rights reserved.
 //
 
-import Foundation
+import Foundation.NSString
 
 
 /**

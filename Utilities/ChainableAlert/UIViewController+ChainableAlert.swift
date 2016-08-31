@@ -15,7 +15,7 @@ private var chainableAlert: ChainableAlert?
  
  e.g.
  
- 1.
+ ①
  self
  .actionSheet(title: "Title", message: "message")
  .normalButton("normal1")
@@ -34,7 +34,7 @@ private var chainableAlert: ChainableAlert?
     print("showd!")
  }
 
- 2.
+ ②
  self
  .alert(title: "Title", message: "message")
  .textField(configuration: { textField in
