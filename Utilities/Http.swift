@@ -31,12 +31,14 @@ public struct Http {
      - parameter host:       host
      - parameter path:       can be connected by parameters, e.g. "/mobileserver/searchKey.Do?key=hell0"
      - parameter parameters: can be nil
-     - parameter completion: if failed, error will be a hint message and data will be nil
+     - parameter timeout:    default is 30 seconds
+     - parameter completion: if failed, data will be nil and error be generated
      */
     public static func request(method:HttpMethod = .GET,
                        host:String = host,
                        path:String,
-                       parameters:[String : AnyObject]?,
+                       parameters:[String : AnyObject]? = nil,
+                       timeout: NSTimeInterval = 30,
                        completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
         
         request(method, absolutePath: host + path, parameters: parameters, completion: completion)
@@ -47,11 +49,13 @@ public struct Http {
      - parameter method:       GET, POST and so on
      - parameter absolutePath: host + path
      - parameter parameters:   can be nil
+     - parameter timeout:      default is 30 seconds
      - parameter completion:   if failed, error will be a hint message and data will be nil
      */
     public static func request(method:HttpMethod = .GET,
                                absolutePath:String,
-                               parameters:[String : AnyObject]?,
+                               parameters:[String : AnyObject]? = nil,
+                               timeout: NSTimeInterval = 30,
                                completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
         
         if let url = NSURL(string: absolutePath) {
@@ -61,7 +65,7 @@ public struct Http {
             //  Used Apple's native api here
             
             let request = NSMutableURLRequest(URL: url)
-            request.timeoutInterval = 30
+            request.timeoutInterval = timeout
             request.HTTPMethod = method.rawValue;
             if let parData = dataWithJSON(parameters) {
                 request.HTTPBody = parData
