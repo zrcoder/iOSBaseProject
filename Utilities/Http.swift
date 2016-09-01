@@ -18,7 +18,7 @@ public enum HttpMethod: String {
 /// default host
 var host: String {
     if isDebug {
-        return "http://www.test.com"
+        return "https://www.test.com"
     }
     return "https://www.normal.com"
 }
@@ -70,7 +70,8 @@ public struct Http {
             if let parData = dataWithJSON(parameters) {
                 request.HTTPBody = parData
             }
-            dLog(request)
+            
+            dLog(combinedString(absolutePath, parameters: parameters))
             
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in
@@ -96,7 +97,36 @@ public struct Http {
             completion(error: error, data: nil)
         }
     }
-
 }
 
+/**
+ Combine URL and parameters as a String
+ - parameter URLString:  e.g. "https://www.test.com"
+ - parameter parameters: e.g. ["key": "value"]
+ - returns: e.g. "https://www.test.com?key=value"
+ */
+public func combinedString(URLString: String, parameters: [String: AnyObject]?) -> String {
+    let parString = stringWithJSON(parameters)
+    var urlString = URLString
+    if urlString.hasSuffix("/") {
+        urlString = urlString[0...urlString.length - 2]
+    }
+    if parString == nil {
+        return URLString
+    }
+    var parStr = parString!
+    var result = URLString
+    result.append("?" as Character)
+    if parStr.hasPrefix("{") {
+        parStr = parStr[1...parStr.length-1]
+    }
+    if parStr.hasSuffix("}") {
+        parStr = parStr[0...parStr.length-2]
+    }
+    parStr = parStr.stringByReplacingOccurrencesOfString(":", withString: "=")
+    parStr = parStr.stringByReplacingOccurrencesOfString(",", withString: "&")
+    parStr = parStr.stringByReplacingOccurrencesOfString("\"", withString: "")
+    result.appendContentsOf(parStr)
+    return result
+}
 

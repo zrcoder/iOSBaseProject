@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Subscript for index, position of substring and so on
 public extension String {
-    /// Cut string from integerIndex to the end
+    /// Character of index(Int)
     public subscript(index: Int) -> Character {
         let index = startIndex.advancedBy(index)
         return self[index]
