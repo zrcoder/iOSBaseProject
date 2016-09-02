@@ -15,27 +15,24 @@ public extension String {
     public func toInt() -> Int? {
         if let num = NSNumberFormatter().numberFromString(self) {
             return num.integerValue
-        } else {
-            return nil
         }
+        return nil
     }
     
     /// Converts String to Double
     public func toDouble() -> Double? {
         if let num = NSNumberFormatter().numberFromString(self) {
             return num.doubleValue
-        } else {
-            return nil
         }
+        return nil
     }
     
     /// Converts String to Float
     public func toFloat() -> Float? {
         if let num = NSNumberFormatter().numberFromString(self) {
             return num.floatValue
-        } else {
-            return nil
         }
+        return nil
     }
     
     /// Converts String to Bool

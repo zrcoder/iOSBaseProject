@@ -1,5 +1,5 @@
 //
-//  String+Size.swift
+//  String+TextSize.swift
 //  iOSBaseProject
 //
 //  Created by admin on 16/8/9.
