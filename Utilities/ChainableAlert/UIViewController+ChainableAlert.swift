@@ -13,47 +13,47 @@ import UIKit
  
  e.g.
  
- ①
+ 1.
  self
  .actionSheet(title: "Title", message: "message")
  .normalButton("normal1")
  .normalButton("normal2")
  .normalButton("normal3") { alert in
-    print("normal3")
+ print("normal3")
  }
  .destructiveButton("destructive1") { alert in
-    print("destructive1")
+ print("destructive1")
  }
  .destructiveButton("destructive2")
  .cancleButton("cancle") { alert in
-    print("canceled")
+ print("canceled")
  }
  .show(animated: true) {
-    print("showd!")
+ print("showd!")
  }
-
- ②
+ 
+ 2.
  self
  .alert(title: "Title", message: "message")
  .textField(configuration: { textField in
-    textField.placeholder = "Username"
+ textField.placeholder = "Username"
  })
  .textField(configuration: { textField in
  textField.placeholder = "Password"
-    textField.secureTextEntry = true
+ textField.secureTextEntry = true
  })
  .normalButton("Login") { alert in
-    if let textFields = alert.textFields {
-        print("Username:\(textFields[0].text!)\nPassword:\(textFields[1].text!)")
-    }
+ if let textFields = alert.textFields {
+ print("Username:\(textFields[0].text!)\nPassword:\(textFields[1].text!)")
+ }
  }
  .cancleButton("cancle")
  .show(animated: true)
-
+ 
  */
 @available (iOS 8, *)
 public extension UIViewController {
-    private var chainableAlert: ChainableAlert?
+    
     /**
      Create an alert
      */
@@ -117,3 +117,18 @@ public extension UIViewController {
         }
     }
 }
+
+private extension UIViewController {
+    struct AssociatedKeys {
+        static var chainableAlertKey = "chainableAlertKey"
+    }
+    var chainableAlert: ChainableAlert? {
+        get {
+            return (objc_getAssociatedObject(self, &AssociatedKeys.chainableAlertKey) as? ChainableAlert)
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.chainableAlertKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+}
+
