@@ -18,7 +18,7 @@ let navigationBarBackgroundColorHexValue: UInt32 = 0xbbeebb
 let navigationBarBackgroundColor = Color(hex: navigationBarBackgroundColorHexValue)
 let navigationBarShadowImageColor = Color.clearColor()
 
-// Color
+// Mark: Colors
 let myGreen     = Color(hex: 0x219580)
 let myRed       = Color(hex: 0xf15352)
 let myBlack     = Color(hex: 0x333333)
