@@ -30,10 +30,10 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
         // (It's better to custom the back button in BaseViewController, because you can override the button action in a single view controller. --see BaseViewController.swift)
         
         // Title
-        navigationBar.titleTextAttributes = navigationBarTitleTextAttributes
+        navigationBar.titleTextAttributes = BaseStyle.navigationBarTitleTextAttributes
         // Background and bottom line
-        navigationBar.setBackgroundImage(imageWithColor(navigationBarBackgroundColor, size: CGSize(width: screenWidth, height: 64)), forBarMetrics: .Default)
-        navigationBar.shadowImage = imageWithColor(navigationBarShadowImageColor, size: CGSize(width: screenWidth, height: 1))
+        navigationBar.setBackgroundImage(imageWithColor(BaseStyle.navigationBarBackgroundColor, size: CGSize(width: screenWidth, height: 64)), forBarMetrics: .Default)
+        navigationBar.shadowImage = imageWithColor(BaseStyle.navigationBarShadowImageColor, size: CGSize(width: screenWidth, height: 1))
     }
     
     // Mark: UINavigationControllerDelegate

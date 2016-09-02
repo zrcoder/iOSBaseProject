@@ -8,8 +8,6 @@
 
 import UIKit
 
-private var chainableAlert: ChainableAlert?
-
 /**
  *  Add chainable use to show an alert.
  
@@ -55,7 +53,7 @@ private var chainableAlert: ChainableAlert?
  */
 @available (iOS 8, *)
 public extension UIViewController {
-    
+    private var chainableAlert: ChainableAlert?
     /**
      Create an alert
      */

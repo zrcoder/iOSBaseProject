@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let UniqueIdentifierDefaultsKey = "UniqueIdentifierDefaultsKey"
-
 public struct DeviceInfo {
     /// Returns true if it's simulator and not a device
     public static var isSimulator: Bool {
@@ -242,11 +240,15 @@ public struct DeviceInfo {
         }
         return uuid
     }
+    
 
 }
 
 //Mark: private
 private extension DeviceInfo {
+    
+    static let UniqueIdentifierDefaultsKey = "UniqueIdentifierDefaultsKey"
+    
     static func p_systemInfomation(type: Int32) -> Int {
         var size: size_t = sizeof(Int)
         var results: Int = 0

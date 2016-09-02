@@ -15,15 +15,16 @@ public enum HttpMethod: String {
     case GET, POST
 }
 
-/// default host
-var host: String {
-    if isDebug {
-        return "https://www.test.com"
-    }
-    return "https://www.normal.com"
-}
 
 public struct Http {
+    
+    /// default host
+    static var host: String {
+        if isDebug {
+            return "https://www.test.com"
+        }
+        return "https://www.normal.com"
+    }
     
     /**
      Http request

@@ -40,7 +40,7 @@ class BaseViewController: UIViewController {
     private var leftBarButtonItems: [UIBarButtonItem] {
         let button = UIButton(type: .Custom)
         button.frame = CGRectMake(0, 0, 44, 44)
-        button.setImage(UIImage(named: backButtonImageName), forState: .Normal)
+        button.setImage(UIImage(named: BaseStyle.backButtonImageName), forState: .Normal)
         button.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
         let buttonItem = UIBarButtonItem(customView: button)
         let spacerItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
