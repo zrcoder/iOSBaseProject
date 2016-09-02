@@ -9,6 +9,7 @@
 import UIKit
 
 public extension UIView {
+    
     public var snapshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
         if let context = UIGraphicsGetCurrentContext() {
@@ -22,6 +23,7 @@ public extension UIView {
 }
 
 public extension UIScrollView {
+    
     public var fullSnapshot: UIImage? {
         let originalFrame = frame
         frame.size.height = contentSize.height
