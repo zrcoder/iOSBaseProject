@@ -20,3 +20,13 @@ public extension UIView {
         return nil        
     }
 }
+
+public extension UIScrollView {
+    public var fullSnapshot: UIImage? {
+        let originalFrame = frame
+        frame.size.height = contentSize.height
+        let image = snapshot
+        frame = originalFrame
+        return image
+    }
+}
