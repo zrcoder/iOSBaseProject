@@ -8,7 +8,7 @@ Welcome to add your codes!
 
 Swift3 branch is ready, I'll combine the branch to master when the final official version of Swift3 released.
 
-Swift3分支已经准备好，在Swift3正式版发布后会合并到master分支。
+Swift3分支已准备好，在Swift3正式版发布后会合并到master分支。
 
 
 You can also find an Objective-C version here:<br>
