@@ -6,6 +6,11 @@ Welcome to add your codes!
 
 非常欢迎加入你的代码!
 
+Swift3 branch is ready, I'll combine the branch to master when the final official version of Swift3 released.
+
+Swift3分支已经准备好，在Swift3正式版发布后会合并到master分支。
+
+
 You can also find an Objective-C version here:<br>
 可以戳这里看看Objective-C版本：<br>
  [iOSProjectFrame](https://github.com/DingHub/iOSProjectFrame).
