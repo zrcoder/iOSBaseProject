@@ -22,32 +22,20 @@ public struct DeviceInfo {
     public static var isDevice: Bool {
         return !isSimulator
     }
-    /**
-     *  The system version without the subversion
-     *  Example: 7.0
-     */
-    public static func systemVersion() -> String {
+    /// The system version without the subversion. Example: 7.0
+    public static var systemVersion: String {
         return UIDevice.currentDevice().systemVersion as String
     }
-    
-    /**
-     *  The device platform string
-     *  Example: "iPhone3,2"
-     */
-    public static func platform() -> String {
+    /// The device platform string. Example: "iPhone3,2"
+    public static var platform: String {
         var size = 0
         sysctlbyname("hw.machine", nil, &size, nil, 0)
         var machine = [CChar](count: size, repeatedValue: 0)
         sysctlbyname("hw.machine", &machine, &size, nil, 0)
         return String.fromCString(machine)!
     }
-    /**
-     *  The user-friendly device platform string
-     *  Example: "iPad Air (Cellular)"
-     */
-    public static func platformForUser() -> String {
-        let platform = self.platform()
-        
+    /// The user-friendly device platform string. Example: "iPad Air (Cellular)"
+    public static var platformForUser: String {
         switch platform {
         //  iPhone
         case "iPhone1,1": return "iPhone 2G"
@@ -104,71 +92,46 @@ public struct DeviceInfo {
         default: return platform;
         }
     }
-    /**
-     *  Check if the current device is an iPhone
-     */
-    public static func isiPhone() -> Bool {
-        return self.platform().hasPrefix("iPhone")
+    /// Check if the current device is an iPhone
+    public static var isiPhone: Bool {
+        return platform.hasPrefix("iPhone")
     }
-    /**
-     *  Check if the current device is an iPad
-     */
-    public static func isiPad() -> Bool {
-        return self.platform().hasPrefix("iPad")
+    /// Check if the current device is an iPad
+    public static var isiPad: Bool {
+        return platform.hasPrefix("iPad")
     }
-    /**
-     *  Check if the current device is an iPod
-     */
-    public static func isiPod() -> Bool {
-        return self.platform().hasPrefix("iPod")
+    /// Check if the current device is an iPod
+    public static var isiPod: Bool {
+        return platform.hasPrefix("iPod")
     }
-    /**
-     *  Check if the current device has a Retina display
-     */
-    public static func isRetina() -> Bool {
+    /// Check if the current device has a Retina display
+    public static var isRetina: Bool {
         let screen = UIScreen.mainScreen()
         return screen.respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:))) && screen.scale >= 2.0
     }
-    /**
-     *  Check if the current device has a Retina HD display
-     */
-    public static func isRetinaHD() -> Bool {
+    /// Check if the current device has a Retina HD display
+    public static var isRetinaHD: Bool {
         let screen = UIScreen.mainScreen()
         return screen.respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:))) && screen.scale >= 3.0
     }
-    
-    /**
-     *  The current device RAM size
-     */
-    public static func ramSize() -> Int {
+    /// The current device RAM size
+    public static var ramSize: Int {
         return self.p_systemInfomation(HW_MEMSIZE)
     }
-    
-    /**
-     *  The current device CPU number
-     */
-    public static func cpuNumber() -> Int {
+    /// The current device CPU number
+    public static var cpuNumber: Int {
         return self.p_systemInfomation(HW_NCPU)
     }
-    
-    /**
-     *  The current device total memory
-     */
-    public static func totalMemory() -> Int {
+    /// The current device total memory
+    public static var totalMemory: Int {
         return self.p_systemInfomation(HW_PHYSMEM)
     }
-    
-    /**
-     *  The current device non-kernel memory
-     */
-    public static func userMemory() -> Int {
+    /// The current device non-kernel memory
+    public static var userMemory: Int {
         return self.p_systemInfomation(HW_USERMEM)
     }
-    
-    /**
-     *  The current device total disk space
-     */
-    public static func totalDiskSpace() -> Int {
+    /// The current device total disk space
+    public static var totalDiskSpace: Int {
         do {
             let fattributes = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
             return (fattributes[NSFileSystemSize] as! NSNumber).integerValue
@@ -178,11 +141,8 @@ public struct DeviceInfo {
         }
         return 0
     }
-    
-    /**
-     *  The current device free disk space
-     */
-    public static func freeDiskSpace() -> Int {
+    /// The current device free disk space
+    public static var freeDiskSpace: Int {
         do {
             let fattributes = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
             return (fattributes[NSFileSystemFreeSize] as! NSNumber).integerValue
@@ -192,11 +152,8 @@ public struct DeviceInfo {
         }
         return 0
     }
-    
-    /**
-     *  The current device MAC address
-     */
-    public static func macAddress() -> String {
+    /// The current device MAC address
+    public static var macAddress: String {
         let index  = Int32(if_nametoindex("en0"))
         let bsdData = "en0".dataUsingEncoding(NSUTF8StringEncoding)!
         var mib : [Int32] = [CTL_NET, AF_ROUTE, 0, AF_LINK, NET_RT_IFLIST, index]
@@ -221,11 +178,8 @@ public struct DeviceInfo {
         macAddressData.getBytes(&macAddressDataBytes, length: 6)
         return macAddressDataBytes.map({ String(format:"%02x", $0) }).joinWithSeparator(":")
     }
-    
-    /**
-     *  Generate an unique identifier and store it into standardUserDefaults
-     */
-    public static func uniqueIdentifier() -> String {
+    /// Generate an unique identifier and store it into standardUserDefaults
+    public static var uniqueIdentifier: String {
         var uuid: String = ""
         if UIDevice.currentDevice().respondsToSelector(Selector("identifierForVendor")) {
             uuid = (UIDevice.currentDevice().identifierForVendor?.UUIDString)!
@@ -240,8 +194,6 @@ public struct DeviceInfo {
         }
         return uuid
     }
-    
-
 }
 
 //Mark: private
