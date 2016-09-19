@@ -12,36 +12,41 @@ import Foundation
 public extension String {
     /// Character of index(Int)
     public subscript(index: Int) -> Character {
-        let index = startIndex.advancedBy(index)
+        let index = characters.index(startIndex, offsetBy: index)
         return self[index]
     }
-    
     /// Cut string from range
-    public subscript(range: Range<Int>) -> String {
-        let start = startIndex.advancedBy(range.startIndex)
-        let end = startIndex.advancedBy(range.endIndex)
+    public subscript(range: CountableClosedRange<Int>) -> String {
+        let start = characters.index(startIndex, offsetBy: range.lowerBound)
+        let end = characters.index(startIndex, offsetBy: range.upperBound)
         let range = start..<end
         return self[range]
     }
-    
+    /// Cut string from range
+    public subscript(range: CountableRange<Int>) -> String {
+        let start = characters.index(startIndex, offsetBy: range.lowerBound)
+        let end = characters.index(startIndex, offsetBy: range.upperBound - 1)
+        let range = start..<end
+        return self[range]
+    }
     /// Position of begining character of substing
-    public func indexOf(subString: String, caseInsensitive: Bool = false, fromEnd: Bool = false) -> Int {
+    public func indexOf(_ subString: String, caseInsensitive: Bool = false, fromEnd: Bool = false) -> Int {
         if subString.isEmpty {
             return -1
         }
-        var searchOption = fromEnd ? NSStringCompareOptions.AnchoredSearch : NSStringCompareOptions.BackwardsSearch
+        var searchOption = fromEnd ? NSString.CompareOptions.anchored : NSString.CompareOptions.backwards
         if caseInsensitive {
-            searchOption.insert(NSStringCompareOptions.CaseInsensitiveSearch)
+            searchOption.insert(NSString.CompareOptions.caseInsensitive)
         }
-        if let range = self.rangeOfString(subString, options: searchOption) where !range.isEmpty {
-            return self.startIndex.distanceTo(range.startIndex)
+        if let range = self.range(of: subString, options: searchOption) , !range.isEmpty {
+            return self.characters.distance(from: self.startIndex, to: range.lowerBound)
         }
         return -1
     }
     
     /// Returns the first index of the occurency of the character in String
-    public func indexOf(char: Character) -> Int? {
-        for (index, c) in characters.enumerate() {
+    public func indexOf(_ char: Character) -> Int? {
+        for (index, c) in characters.enumerated() {
             if c == char {
                 return index
             }

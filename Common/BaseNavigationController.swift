@@ -14,7 +14,7 @@ import UIKit
 
 class BaseNavigationController: UINavigationController, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
-    override func pushViewController(viewController: UIViewController, animated: Bool) {
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         duringPushAnimation = true
         super.pushViewController(viewController, animated: animated)
     }
@@ -32,33 +32,33 @@ class BaseNavigationController: UINavigationController, UINavigationControllerDe
         // Title
         navigationBar.titleTextAttributes = BaseStyle.navigationBarTitleTextAttributes
         // Background and bottom line
-        navigationBar.setBackgroundImage(imageWithColor(BaseStyle.navigationBarBackgroundColor, size: CGSize(width: screenWidth, height: 64)), forBarMetrics: .Default)
+        navigationBar.setBackgroundImage(imageWithColor(BaseStyle.navigationBarBackgroundColor, size: CGSize(width: screenWidth, height: 64)), for: .default)
         navigationBar.shadowImage = imageWithColor(BaseStyle.navigationBarShadowImageColor, size: CGSize(width: screenWidth, height: 1))
     }
     
     // Mark: UINavigationControllerDelegate
     
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         if interactivePopGestureRecognizer != nil {
             if let delegate = interactivePopGestureRecognizer!.delegate {
                 assert(delegate === self, "BaseNavigationController won't work correctly if you change interactivePopGestureRecognizer's delegate.")
             }
         }
         duringPushAnimation = false
-        realDelegate?.navigationController?(navigationController, didShowViewController: viewController, animated: animated)
+        realDelegate?.navigationController?(navigationController, didShow: viewController, animated: animated)
     }
     
     // Mark: UIGestureRecognizerDelegate
     
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if (gestureRecognizer == interactivePopGestureRecognizer) {
             return viewControllers.count > 1 && !duringPushAnimation
         }
         return true
     }
     
-    private var duringPushAnimation = false
-    private var realDelegate: UINavigationControllerDelegate?
+    fileprivate var duringPushAnimation = false
+    fileprivate var realDelegate: UINavigationControllerDelegate?
     
     deinit {
         delegate = nil

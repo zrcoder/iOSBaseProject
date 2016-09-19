@@ -13,15 +13,15 @@ public extension String {
     
     /// Converts String to Int
     public func toInt() -> Int? {
-        if let num = NSNumberFormatter().numberFromString(self) {
-            return num.integerValue
+        if let num = NumberFormatter().number(from: self) {
+            return num.intValue
         }
         return nil
     }
     
     /// Converts String to Double
     public func toDouble() -> Double? {
-        if let num = NSNumberFormatter().numberFromString(self) {
+        if let num = NumberFormatter().number(from: self) {
             return num.doubleValue
         }
         return nil
@@ -29,7 +29,7 @@ public extension String {
     
     /// Converts String to Float
     public func toFloat() -> Float? {
-        if let num = NSNumberFormatter().numberFromString(self) {
+        if let num = NumberFormatter().number(from: self) {
             return num.floatValue
         }
         return nil
@@ -37,7 +37,7 @@ public extension String {
     
     /// Converts String to Bool
     public func toBool() -> Bool? {
-        let trimmed = self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).lowercaseString
+        let trimmed = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).lowercased()
         if trimmed == "true" {
             return true
         }

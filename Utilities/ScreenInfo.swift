@@ -10,7 +10,7 @@ import UIKit
 
 /// Bounds of the main screen
 public var screenBounds: CGRect {
-    return UIScreen.mainScreen().bounds
+    return UIScreen.main.bounds
 }
 
 /// Size of the main screen
@@ -30,5 +30,5 @@ public var screenHeight: CGFloat {
 
 /// Heitht of the status bar
 public var statusBarHeight: CGFloat {
-    return UIApplication.sharedApplication().statusBarFrame.height
+    return UIApplication.shared.statusBarFrame.height
 }

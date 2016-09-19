@@ -24,15 +24,15 @@ public struct DeviceInfo {
     }
     /// The system version without the subversion. Example: 7.0
     public static var systemVersion: String {
-        return UIDevice.currentDevice().systemVersion as String
+        return UIDevice.current.systemVersion as String
     }
     /// The device platform string. Example: "iPhone3,2"
     public static var platform: String {
         var size = 0
         sysctlbyname("hw.machine", nil, &size, nil, 0)
-        var machine = [CChar](count: size, repeatedValue: 0)
+        var machine = [CChar](repeating: 0, count: size)
         sysctlbyname("hw.machine", &machine, &size, nil, 0)
-        return String.fromCString(machine)!
+        return String(cString: machine)
     }
     /// The user-friendly device platform string. Example: "iPad Air (Cellular)"
     public static var platformForUser: String {
@@ -106,13 +106,13 @@ public struct DeviceInfo {
     }
     /// Check if the current device has a Retina display
     public static var isRetina: Bool {
-        let screen = UIScreen.mainScreen()
-        return screen.respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:))) && screen.scale >= 2.0
+        let screen = UIScreen.main
+        return screen.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && screen.scale >= 2.0
     }
     /// Check if the current device has a Retina HD display
     public static var isRetinaHD: Bool {
-        let screen = UIScreen.mainScreen()
-        return screen.respondsToSelector(#selector(UIScreen.displayLinkWithTarget(_:selector:))) && screen.scale >= 3.0
+        let screen = UIScreen.main
+        return screen.responds(to: #selector(UIScreen.displayLink(withTarget:selector:))) && screen.scale >= 3.0
     }
     /// The current device RAM size
     public static var ramSize: Int {
@@ -133,8 +133,8 @@ public struct DeviceInfo {
     /// The current device total disk space
     public static var totalDiskSpace: Int {
         do {
-            let fattributes = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
-            return (fattributes[NSFileSystemSize] as! NSNumber).integerValue
+            let fattributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+            return (fattributes[FileAttributeKey.systemSize] as! NSNumber).intValue
         }
         catch let error as NSError {
             dLog(error)
@@ -144,52 +144,28 @@ public struct DeviceInfo {
     /// The current device free disk space
     public static var freeDiskSpace: Int {
         do {
-            let fattributes = try NSFileManager.defaultManager().attributesOfFileSystemForPath(NSHomeDirectory())
-            return (fattributes[NSFileSystemFreeSize] as! NSNumber).integerValue
+            let fattributes = try FileManager.default.attributesOfFileSystem(forPath: NSHomeDirectory())
+            return (fattributes[FileAttributeKey.systemFreeSize] as! NSNumber).intValue
         }
         catch let error as NSError {
             dLog(error)
         }
         return 0
     }
-    /// The current device MAC address
-    public static var macAddress: String {
-        let index  = Int32(if_nametoindex("en0"))
-        let bsdData = "en0".dataUsingEncoding(NSUTF8StringEncoding)!
-        var mib : [Int32] = [CTL_NET, AF_ROUTE, 0, AF_LINK, NET_RT_IFLIST, index]
-        var len = 0;
-        if sysctl(&mib,UInt32(mib.count), nil, &len,nil,0) < 0 {
-            dLog("Error: could not determine length of info data structure ")
-            return ""
-        }
-        var buffer = [CChar](count: len, repeatedValue: 0)
-        if sysctl(&mib, UInt32(mib.count), &buffer, &len, nil, 0) < 0 {
-            dLog("Error: could not read info data structure")
-            return ""
-        }        
-        let infoData = NSData(bytes: buffer, length: len)
-        var interfaceMsgStruct = if_msghdr()
-        infoData.getBytes(&interfaceMsgStruct, length: sizeof(if_msghdr))
-        let socketStructStart = sizeof(if_msghdr) + 1
-        let socketStructData = infoData.subdataWithRange(NSMakeRange(socketStructStart, len - socketStructStart))
-        let rangeOfToken = socketStructData.rangeOfData(bsdData, options: NSDataSearchOptions(rawValue: 0), range: NSMakeRange(0, socketStructData.length))
-        let macAddressData = socketStructData.subdataWithRange(NSMakeRange(rangeOfToken.location + 3, 6))
-        var macAddressDataBytes = [UInt8](count: 6, repeatedValue: 0)
-        macAddressData.getBytes(&macAddressDataBytes, length: 6)
-        return macAddressDataBytes.map({ String(format:"%02x", $0) }).joinWithSeparator(":")
-    }
+    // MARK:  -ToDo The current device MAC address
+    
     /// Generate an unique identifier and store it into standardUserDefaults
     public static var uniqueIdentifier: String {
         var uuid: String = ""
-        if UIDevice.currentDevice().respondsToSelector(Selector("identifierForVendor")) {
-            uuid = (UIDevice.currentDevice().identifierForVendor?.UUIDString)!
+        if UIDevice.current.responds(to: #selector(getter: UIDevice.identifierForVendor)) {
+            uuid = (UIDevice.current.identifierForVendor?.uuidString)!
         } else {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            if let saved = defaults.objectForKey(UniqueIdentifierDefaultsKey) {
+            let defaults = UserDefaults.standard
+            if let saved = defaults.object(forKey: UniqueIdentifierDefaultsKey) {
                 uuid = saved as! String
             } else {
                 uuid = self.p_generateUUID()
-                defaults.setObject(uuid, forKey: UniqueIdentifierDefaultsKey)
+                defaults.set(uuid, forKey: UniqueIdentifierDefaultsKey)
             }
         }
         return uuid
@@ -201,8 +177,8 @@ private extension DeviceInfo {
     
     static let UniqueIdentifierDefaultsKey = "UniqueIdentifierDefaultsKey"
     
-    static func p_systemInfomation(type: Int32) -> Int {
-        var size: size_t = sizeof(Int)
+    static func p_systemInfomation(_ type: Int32) -> Int {
+        var size: size_t = MemoryLayout<Int>.size
         var results: Int = 0
         var mib: [Int32] = [CTL_HW, type]
         sysctl(&mib, 2, &results, &size, nil, 0)

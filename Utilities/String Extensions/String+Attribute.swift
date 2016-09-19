@@ -13,34 +13,34 @@ public extension String {
     
     /// Returns bold NSAttributedString
     public var bold: NSAttributedString {
-        let boldString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(UIFont.systemFontSize())])
+        let boldString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
         return boldString
     }
     
     /// Returns underlined NSAttributedString
     public var underline: NSAttributedString {
-        let underlineString = NSAttributedString(string: self, attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue])
+        let underlineString = NSAttributedString(string: self, attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
         return underlineString
     }
     
     /// Returns italic NSAttributedString
     public var italic: NSAttributedString {
-        let italicString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.italicSystemFontOfSize(UIFont.systemFontSize())])
+        let italicString = NSMutableAttributedString(string: self, attributes: [NSFontAttributeName: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
         return italicString
     }
     
     /// Returns NSAttributedString
-    public func color(color: UIColor) -> NSAttributedString {
+    public func color(_ color: UIColor) -> NSAttributedString {
         let colorString = NSMutableAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
         return colorString
     }
     
     /// Returns NSAttributedString
-    public func colorSubString(subString: String, color: UIColor) -> NSMutableAttributedString {
+    public func colorSubString(_ subString: String, color: UIColor) -> NSMutableAttributedString {
         var start = 0
         var ranges: [NSRange] = []
         while true {
-            let range = (self as NSString).rangeOfString(subString, options: NSStringCompareOptions.LiteralSearch, range: NSRange(location: start, length: (self as NSString).length - start))
+            let range = (self as NSString).range(of: subString, options: NSString.CompareOptions.literal, range: NSRange(location: start, length: (self as NSString).length - start))
             if range.location == NSNotFound {
                 break
             } else {

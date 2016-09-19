@@ -11,24 +11,24 @@ import Foundation
 /**
  *  Path of file in the main bundle
  */
-public func bundlePathFor(fileName: String) -> String {
-    return (NSBundle.mainBundle().bundlePath as NSString).stringByAppendingPathComponent(fileName)
+public func bundlePathFor(_ fileName: String) -> String {
+    return (Bundle.main.bundlePath as NSString).appendingPathComponent(fileName)
 }
 /**
  *  Path of file in the sand box // document
  */
-public func documentPathFor(fileName: String) -> String {
-    return (documentPath as NSString).stringByAppendingPathComponent(fileName)
+public func documentPathFor(_ fileName: String) -> String {
+    return (documentPath as NSString).appendingPathComponent(fileName)
 }
 
 /// Document path in the sand box
 public var documentPath: String {
-    return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+    return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 }
 
 
-public func appGroupDocumentPath(appGroupId: String) -> String? {
-    let url = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(appGroupId)
-    let path = url?.absoluteString.stringByReplacingOccurrencesOfString("file:", withString: "", options: .LiteralSearch, range: nil)
+public func appGroupDocumentPath(_ appGroupId: String) -> String? {
+    let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupId)
+    let path = url?.absoluteString.replacingOccurrences(of: "file:", with: "", options: .literal, range: nil)
     return path
 }

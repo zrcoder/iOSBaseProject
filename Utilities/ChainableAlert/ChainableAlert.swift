@@ -57,21 +57,21 @@ public typealias AlertButtonAction = (ChainableAlert) -> Void
 public typealias AlertTextFieldConfigurationHandler = (UITextField) -> Void
 
 @available (iOS 8, *)
-public class ChainableAlert {
+open class ChainableAlert {
     
     // Mark: init
     
     /**
      Create an alert
      */
-    public static func alert(title title: String? = nil, message: String? = nil) -> ChainableAlert {
-        return ChainableAlert(title: title, message: message, style: .Alert)
+    open static func alert(title: String? = nil, message: String? = nil) -> ChainableAlert {
+        return ChainableAlert(title: title, message: message, style: .alert)
     }
     /**
      Create an action sheet
      */
-    public static func actionSheet(title title: String? = nil, message: String? = nil) -> ChainableAlert {
-        return ChainableAlert(title: title, message: message, style: .ActionSheet)
+    open static func actionSheet(title: String? = nil, message: String? = nil) -> ChainableAlert {
+        return ChainableAlert(title: title, message: message, style: .actionSheet)
     }
     
     // Mark: add buttons
@@ -79,7 +79,7 @@ public class ChainableAlert {
     /**
      Add a normal button to the alert
      */
-    public func normalButton(title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
+    open func normalButton(_ title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
         let entity = AlertButtonEntity(title: title, action: handler == nil ? {_ in} : handler!)
         if normalEntities == nil {
             normalEntities = []
@@ -91,7 +91,7 @@ public class ChainableAlert {
     /**
      Add a destructive button to the alert
      */
-    public func destructiveButton(title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
+    open func destructiveButton(_ title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
         let entity = AlertButtonEntity(title: title, action: handler == nil ? {_ in} : handler!)
         if destructiveEntities == nil {
             destructiveEntities = []
@@ -103,7 +103,7 @@ public class ChainableAlert {
     /**
      Add a cancel button to the alert, the most number of cancel button is 1
      */
-    public func cancleButton(title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
+    open func cancleButton(_ title: String, handler: AlertButtonAction? = nil) -> ChainableAlert {
         let entity = AlertButtonEntity(title: title, action: handler == nil ? {_ in} : handler!)
         cancleEntity = entity
         return self
@@ -112,8 +112,8 @@ public class ChainableAlert {
     /**
      Add a textField to the alert, if is action sheet, no use.
      */
-    public func textField(configuration configuration: AlertTextFieldConfigurationHandler? = nil) -> ChainableAlert {
-        guard style == .Alert else {
+    open func textField(configuration: AlertTextFieldConfigurationHandler? = nil) -> ChainableAlert {
+        guard style == .alert else {
             return self
         }
         let handler = configuration == nil ? {_ in } : configuration!
@@ -125,7 +125,7 @@ public class ChainableAlert {
     }
     
     /// textFields added to the alert.
-    public var textFields: [UITextField]?
+    open var textFields: [UITextField]?
     
     // Mark: show
     
@@ -134,13 +134,13 @@ public class ChainableAlert {
      - parameter viewController: We will use it to present
      - parameter fromPosition:   If is action sheet, and device is iPad, we can set the source point for the popover controller
      */
-    public func show(viewController: UIViewController? = nil, animated:Bool, fromPosition:(x: CGFloat, y: CGFloat)? = nil, completion: (() -> Void)? = nil) {
-        let alertStyle: UIAlertControllerStyle = style == .Alert ? .Alert : .ActionSheet
+    open func show(_ viewController: UIViewController? = nil, animated:Bool, fromPosition:(x: CGFloat, y: CGFloat)? = nil, completion: (() -> Void)? = nil) {
+        let alertStyle: UIAlertControllerStyle = style == .alert ? .alert : .actionSheet
         let alertController = UIAlertController(title: title, message: message, preferredStyle: alertStyle)
         
         if let entities = normalEntities {
             for entity in entities {
-                let action = UIAlertAction(title: entity.title, style: .Default) { action in
+                let action = UIAlertAction(title: entity.title, style: .default) { action in
                     let buttonAction = entity.action
                     buttonAction(self)
                 }
@@ -150,7 +150,7 @@ public class ChainableAlert {
         
         if let entities = destructiveEntities {
             for entity in entities {
-                let action = UIAlertAction(title: entity.title, style: .Destructive) { action in
+                let action = UIAlertAction(title: entity.title, style: .destructive) { action in
                     let buttonAction = entity.action
                     buttonAction(self)
                 }
@@ -159,7 +159,7 @@ public class ChainableAlert {
         }
         
         if let entity = cancleEntity {
-            let action = UIAlertAction(title: entity.title, style: .Cancel) { action in
+            let action = UIAlertAction(title: entity.title, style: .cancel) { action in
                 let buttonAction = entity.action
                 buttonAction(self)
             }
@@ -168,12 +168,12 @@ public class ChainableAlert {
         
         if let textHandlers = textHandlers {
             for handler in textHandlers {
-                alertController.addTextFieldWithConfigurationHandler(handler)
+                alertController.addTextField(configurationHandler: handler)
             }
             textFields = alertController.textFields
         }
         
-        func showWithViewController(controller: UIViewController) {
+        func showWithViewController(_ controller: UIViewController) {
             if let popoverController = alertController.popoverPresentationController {
                 popoverController.sourceView = controller.view
                 
@@ -184,28 +184,28 @@ public class ChainableAlert {
                     popoverController.sourceRect = CGRect(x: size.width/2, y: size.height - 2, width: 0, height: 2)
                 }
             }
-            controller.presentViewController(alertController, animated: animated, completion: completion)
+            controller.present(alertController, animated: animated, completion: completion)
         }
         
         if let controller = viewController {
             showWithViewController(controller)
-        } else if let controller = UIApplication.sharedApplication().keyWindow?.rootViewController {
+        } else if let controller = UIApplication.shared.keyWindow?.rootViewController {
             showWithViewController(controller)
         }
     }
     
     // Mark: private
     
-    private var title: String?
-    private var message: String?
-    private var style: AlertStyle = .Alert
+    fileprivate var title: String?
+    fileprivate var message: String?
+    fileprivate var style: AlertStyle = .alert
     
-    private var normalEntities: [AlertButtonEntity]?
-    private var destructiveEntities: [AlertButtonEntity]?
-    private var cancleEntity: AlertButtonEntity?
-    private var textHandlers: [AlertTextFieldConfigurationHandler]?
+    fileprivate var normalEntities: [AlertButtonEntity]?
+    fileprivate var destructiveEntities: [AlertButtonEntity]?
+    fileprivate var cancleEntity: AlertButtonEntity?
+    fileprivate var textHandlers: [AlertTextFieldConfigurationHandler]?
     
-    private init(title: String?, message: String?, style: AlertStyle) {
+    fileprivate init(title: String?, message: String?, style: AlertStyle) {
         self.title = title
         self.message = message
         self.style = style
@@ -217,12 +217,12 @@ public class ChainableAlert {
 
 private extension ChainableAlert {
     
-    private enum AlertStyle : Int {
-        case Alert
-        case ActionSheet
+    enum AlertStyle : Int {
+        case alert
+        case actionSheet
     }
     
-    private struct AlertButtonEntity {
+    struct AlertButtonEntity {
         var title: String
         var action: AlertButtonAction
     }

@@ -35,7 +35,7 @@ public extension Color {
      - parameter alpha: alpha, default is 1
      */
     public convenience init(hexString: String, alpha: CGFloat = 1) {
-        let scanner   = NSScanner(string: hexString)
+        let scanner   = Scanner(string: hexString)
         
         if (hexString.hasPrefix("#")) {
             scanner.scanLocation = 1
@@ -43,7 +43,7 @@ public extension Color {
         
         var color: UInt32 = 0
         
-        if scanner.scanHexInt(&color) {
+        if scanner.scanHexInt32(&color) {
             self.init(hex: color, alpha: alpha)
         } else {
             self.init(hex: 0x000000, alpha: alpha)

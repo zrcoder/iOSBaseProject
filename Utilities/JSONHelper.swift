@@ -11,10 +11,10 @@ import Foundation
 /**
  Parse JSON (Array, Dictionary...) to NSData
  */
-public func dataWithJSON(object:AnyObject?) -> NSData? {
+public func dataWithJSON(_ object:AnyObject?) -> Data? {
     if let object = object {
         do {
-            let data = try NSJSONSerialization.dataWithJSONObject(object, options: NSJSONWritingOptions())
+            let data = try JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions())
             return data
         } catch let error as NSError {
             dLog("JSON->NSData failed:\(error)")
@@ -26,11 +26,11 @@ public func dataWithJSON(object:AnyObject?) -> NSData? {
 /**
  Parse NSData to JSON (Array, Dictionary...)
  */
-public func JSONWithData(data:NSData?) -> AnyObject? {
+public func JSONWithData(_ data:Data?) -> AnyObject? {
     if let data = data {
         do {
-            let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            return object
+            let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            return object as AnyObject?
         } catch let error as NSError {
             dLog("NSData->JSON failed:\(error)")
         }
@@ -42,9 +42,9 @@ public func JSONWithData(data:NSData?) -> AnyObject? {
 /**
  Parse NSData to String
  */
-public func stringWithData(data:NSData?) -> String? {
+public func stringWithData(_ data:Data?) -> String? {
     if let data = data {
-        return String(data: data, encoding: NSUTF8StringEncoding)
+        return String(data: data, encoding: String.Encoding.utf8)
     }
     return nil
 }
@@ -52,9 +52,9 @@ public func stringWithData(data:NSData?) -> String? {
 /**
  Parse String to NSData
  */
-public func dataWithString(string:String?) -> NSData? {
+public func dataWithString(_ string:String?) -> Data? {
     if let string = string {
-        return string.dataUsingEncoding(NSUTF8StringEncoding)
+        return string.data(using: String.Encoding.utf8)
     }
     return nil
 }
@@ -62,7 +62,7 @@ public func dataWithString(string:String?) -> NSData? {
 /**
  Parse NSString to JSON (Array, Dictionary...)
  */
-public func JSONWithString(string:String?) -> AnyObject? {
+public func JSONWithString(_ string:String?) -> AnyObject? {
     let data = dataWithString(string)
     return JSONWithData(data)
 }
@@ -70,7 +70,7 @@ public func JSONWithString(string:String?) -> AnyObject? {
 /**
  Parse JSON (Array, Dictionary...) to String
  */
-public func stringWithJSON(object:AnyObject?) -> String? {
+public func stringWithJSON(_ object:AnyObject?) -> String? {
     let data = dataWithJSON(object)
     return stringWithData(data)
 }

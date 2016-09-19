@@ -12,7 +12,7 @@ import Foundation.NSString
 /**
  print when debuging
  */
-public func log(message: Any) {
+public func log(_ message: Any) {
     if isDebug {
         print("\(message)")
     }
@@ -21,7 +21,7 @@ public func log(message: Any) {
 /**
  print detail log (starts with file name, line number and method name) when debuging
  */
-public func dLog(message: Any? = nil, file: String = #file, line: Int = #line, function: String = #function) {
+public func dLog(_ message: Any? = nil, file: String = #file, line: Int = #line, function: String = #function) {
     if isDebug {
         if let message = message {
             print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛 \n\(message)")

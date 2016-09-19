@@ -9,7 +9,7 @@
 import Foundation
 
 public extension Equatable {
-    public func isIn(collection: Self...) -> Bool {
+    public func isIn(_ collection: Self...) -> Bool {
         return collection.contains(self)
     }
     /*

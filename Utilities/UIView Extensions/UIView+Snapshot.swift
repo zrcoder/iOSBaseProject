@@ -11,9 +11,9 @@ import UIKit
 public extension UIView {
     
     public var snapshot: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, UIScreen.main.scale)
         if let context = UIGraphicsGetCurrentContext() {
-            layer.renderInContext(context)
+            layer.render(in: context)
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return image

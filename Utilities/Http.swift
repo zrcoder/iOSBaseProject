@@ -35,12 +35,12 @@ public struct Http {
      - parameter timeout:    default is 30 seconds
      - parameter completion: if failed, data will be nil and error be generated
      */
-    public static func request(method:HttpMethod = .GET,
+    public static func request(_ method:HttpMethod = .GET,
                        host:String = host,
                        path:String,
                        parameters:[String : AnyObject]? = nil,
-                       timeout: NSTimeInterval = 30,
-                       completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
+                       timeout: TimeInterval = 30,
+                       completion:@escaping (_ error:NSError?, _ data:[String : AnyObject]?)->Void) {
         
         request(method, absolutePath: host + path, parameters: parameters, completion: completion)
     }
@@ -53,49 +53,49 @@ public struct Http {
      - parameter timeout:      default is 30 seconds
      - parameter completion:   if failed, error will be a hint message and data will be nil
      */
-    public static func request(method:HttpMethod = .GET,
+    public static func request(_ method:HttpMethod = .GET,
                                absolutePath:String,
                                parameters:[String : AnyObject]? = nil,
-                               timeout: NSTimeInterval = 30,
-                               completion:(error:NSError?, data:[String : AnyObject]?)->Void) {
+                               timeout: TimeInterval = 30,
+                               completion:@escaping (_ error:NSError?, _ data:[String : AnyObject]?)->Void) {
         
-        if let url = NSURL(string: absolutePath) {
+        if let url = URL(string: absolutePath) {
             
             // You can implement with Apple's native api such as NSURLSession or some third library such as Alamofire
             
             //  Used Apple's native api here
             
-            let request = NSMutableURLRequest(URL: url)
+            var request = URLRequest(url: url)
             request.timeoutInterval = timeout
-            request.HTTPMethod = method.rawValue;
-            if let parData = dataWithJSON(parameters) {
-                request.HTTPBody = parData
+            request.httpMethod = method.rawValue;
+            if let parData = dataWithJSON(parameters as AnyObject?) {
+                request.httpBody = parData
             }
             
             dLog(combinedString(absolutePath, parameters: parameters))
             
-            let session = NSURLSession.sharedSession()
-            let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in
-                dispatch_async(dispatch_get_main_queue()) {
-                    guard let _:NSData = data, let _:NSURLResponse = response where error == nil else {
-                        completion(error: error, data: nil)
+            let session = URLSession.shared
+            let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
+                DispatchQueue.main.async {
+                    guard let _:Data = data, let _:URLResponse = response , error == nil else {
+                        completion(error as NSError?, nil)
                         return
                     }
                     
                     if let dictionary = JSONWithData(data) {
-                        completion(error: nil, data: dictionary as? [String : AnyObject])
+                        completion(nil, dictionary as? [String : AnyObject])
                     } else {
                         let hint = "can't parse response data -> dictionary"
                         let error = NSError(domain: hint, code: -2, userInfo: nil)
-                        completion(error: error, data: nil)
+                        completion(error, nil)
                     }
                 }
-            }
+            }) 
             task.resume()
             
         } else {
             let error = NSError(domain: "url error", code: -1, userInfo: nil);
-            completion(error: error, data: nil)
+            completion(error, nil)
         }
     }
 }
@@ -106,8 +106,8 @@ public struct Http {
  - parameter parameters: e.g. ["key": "value"]
  - returns: e.g. "https://www.test.com?key=value"
  */
-public func combinedString(URLString: String, parameters: [String: AnyObject]?) -> String {
-    let parString = stringWithJSON(parameters)
+public func combinedString(_ URLString: String, parameters: [String: AnyObject]?) -> String {
+    let parString = stringWithJSON(parameters as AnyObject?)
     var urlString = URLString
     if urlString.hasSuffix("/") {
         urlString = urlString[0...urlString.length - 2]
@@ -124,10 +124,10 @@ public func combinedString(URLString: String, parameters: [String: AnyObject]?) 
     if parStr.hasSuffix("}") {
         parStr = parStr[0...parStr.length-2]
     }
-    parStr = parStr.stringByReplacingOccurrencesOfString(":", withString: "=")
-    parStr = parStr.stringByReplacingOccurrencesOfString(",", withString: "&")
-    parStr = parStr.stringByReplacingOccurrencesOfString("\"", withString: "")
-    result.appendContentsOf(parStr)
+    parStr = parStr.replacingOccurrences(of: ":", with: "=")
+    parStr = parStr.replacingOccurrences(of: ",", with: "&")
+    parStr = parStr.replacingOccurrences(of: "\"", with: "")
+    result.append(parStr)
     return result
 }
 

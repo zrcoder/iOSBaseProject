@@ -14,7 +14,7 @@ class BaseTableViewController: BaseViewController, UITableViewDataSource, UITabl
     var pageNumber = 1
 
     let tableView: UITableView = {
-        let tableView = UITableView(frame: screenBounds, style: .Plain)
+        let tableView = UITableView(frame: screenBounds, style: .plain)
         tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
@@ -32,15 +32,15 @@ class BaseTableViewController: BaseViewController, UITableViewDataSource, UITabl
 
     // MARK: - Table view data source. Warning:subclass should reimplement them
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 0
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     

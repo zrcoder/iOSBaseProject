@@ -20,7 +20,6 @@
 		843E526B1D59BF19005179C2 /* String+Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52641D59BF19005179C2 /* String+Case.swift */; };
 		843E526C1D59BF19005179C2 /* String+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52651D59BF19005179C2 /* String+Convert.swift */; };
 		843E526D1D59BF19005179C2 /* String+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52661D59BF19005179C2 /* String+Index.swift */; };
-		843E526E1D59BF19005179C2 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52671D59BF19005179C2 /* String+Regex.swift */; };
 		843E526F1D59BF19005179C2 /* String+Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52681D59BF19005179C2 /* String+Validate.swift */; };
 		843E52701D59BF19005179C2 /* String+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52691D59BF19005179C2 /* String+Base.swift */; };
 		843E52721D59C75A005179C2 /* String+Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E52711D59C75A005179C2 /* String+Count.swift */; };
@@ -59,7 +58,6 @@
 		843E52641D59BF19005179C2 /* String+Case.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Case.swift"; sourceTree = "<group>"; };
 		843E52651D59BF19005179C2 /* String+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Convert.swift"; sourceTree = "<group>"; };
 		843E52661D59BF19005179C2 /* String+Index.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Index.swift"; sourceTree = "<group>"; };
-		843E52671D59BF19005179C2 /* String+Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 		843E52681D59BF19005179C2 /* String+Validate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validate.swift"; sourceTree = "<group>"; };
 		843E52691D59BF19005179C2 /* String+Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Base.swift"; sourceTree = "<group>"; };
 		843E52711D59C75A005179C2 /* String+Count.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Count.swift"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				843E52641D59BF19005179C2 /* String+Case.swift */,
 				843E52651D59BF19005179C2 /* String+Convert.swift */,
 				843E52661D59BF19005179C2 /* String+Index.swift */,
-				843E52671D59BF19005179C2 /* String+Regex.swift */,
 				843E52681D59BF19005179C2 /* String+Validate.swift */,
 				843E52691D59BF19005179C2 /* String+Base.swift */,
 				843E52731D59C7DE005179C2 /* String+TextSize.swift */,
@@ -245,6 +242,7 @@
 				TargetAttributes = {
 					84EF912A1CEDBB7E00B4425B = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -314,7 +312,6 @@
 				843746D21D45AEC20014D5C6 /* Color.swift in Sources */,
 				843E523C1D597F8F005179C2 /* Handy.swift in Sources */,
 				843E526F1D59BF19005179C2 /* String+Validate.swift in Sources */,
-				843E526E1D59BF19005179C2 /* String+Regex.swift in Sources */,
 				84C3BF041D6D371500817686 /* Random.swift in Sources */,
 				843746D51D45AEC20014D5C6 /* ImageHelper.swift in Sources */,
 			);
@@ -437,6 +434,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = Ding.iOSBaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -449,6 +447,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ding.iOSBaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

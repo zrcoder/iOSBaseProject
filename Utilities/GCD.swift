@@ -11,16 +11,16 @@ import Foundation
 /// A little work of gcd wrapper, we can find a wonderful work with this link:
 /// https://github.com/JohnEstropia/GCDKit
 
-public typealias DispatchQueue = dispatch_queue_t
+public typealias DispatchQueue = Dispatch.DispatchQueue
 
 public var gcdMainQueue: DispatchQueue {
-    return dispatch_get_main_queue()
+    return DispatchQueue.main
 }
 
 
-public func runAfter(seconds: Double, queue: dispatch_queue_t = dispatch_get_main_queue(), action: ()->()) {
+public func runAfter(_ seconds: Double, queue: Dispatch.DispatchQueue = DispatchQueue.main, action: @escaping ()->()) {
     
-    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
-    dispatch_after(time, queue, action)
+    let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    queue.asyncAfter(deadline: time, execute: action)
     
 }

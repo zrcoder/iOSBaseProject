@@ -18,12 +18,12 @@ class BaseViewController: UIViewController {
     
     // Mark:Some methods can be overridden
     func backButtonTapped() -> Void {
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Color.whiteColor()
+        view.backgroundColor = Color.white
         
         //custom back button. --if you want more customs, see BaseNavigationController.swift
         if let viewControllers = navigationController?.viewControllers {
@@ -37,13 +37,13 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    private var leftBarButtonItems: [UIBarButtonItem] {
-        let button = UIButton(type: .Custom)
-        button.frame = CGRectMake(0, 0, 44, 44)
-        button.setImage(UIImage(named: BaseStyle.backButtonImageName), forState: .Normal)
-        button.addTarget(self, action: #selector(backButtonTapped), forControlEvents: .TouchUpInside)
+    fileprivate var leftBarButtonItems: [UIBarButtonItem] {
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.setImage(UIImage(named: BaseStyle.backButtonImageName), for: UIControlState())
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         let buttonItem = UIBarButtonItem(customView: button)
-        let spacerItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
+        let spacerItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacerItem.width = -18;
         return [spacerItem, buttonItem]
     }
