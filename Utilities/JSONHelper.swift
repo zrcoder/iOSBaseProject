@@ -60,7 +60,7 @@ public func dataWithString(_ string:String?) -> Data? {
 }
 
 /**
- Parse NSString to JSON (Array, Dictionary...)
+ Parse String to JSON (Array, Dictionary...)
  */
 public func JSONWithString(_ string:String?) -> AnyObject? {
     let data = dataWithString(string)

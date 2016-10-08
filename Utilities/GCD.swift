@@ -18,7 +18,7 @@ public var gcdMainQueue: DispatchQueue {
 }
 
 
-public func runAfter(_ seconds: Double, queue: Dispatch.DispatchQueue = DispatchQueue.main, action: @escaping ()->()) {
+public func run(after seconds: Double, queue: Dispatch.DispatchQueue = DispatchQueue.main, action: @escaping ()->()) {
     
     let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
     queue.asyncAfter(deadline: time, execute: action)
