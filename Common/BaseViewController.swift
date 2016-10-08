@@ -18,7 +18,7 @@ class BaseViewController: UIViewController {
     
     // Mark:Some methods can be overridden
     func backButtonTapped() -> Void {
-        navigationController?.popViewController(animated: true)
+        let _ = navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {

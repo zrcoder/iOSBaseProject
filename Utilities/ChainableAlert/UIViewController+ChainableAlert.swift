@@ -75,7 +75,7 @@ public extension UIViewController {
      Add a normal button to the alert
      */
     public func normalButton(_ title: String, handler: AlertButtonAction? = nil) -> UIViewController {
-        chainableAlert?.normalButton(title, handler: handler)
+        let _ = chainableAlert?.normalButton(title, handler: handler)
         return self
     }
     
@@ -83,7 +83,7 @@ public extension UIViewController {
      Add a destructive button to the alert
      */
     public func destructiveButton(_ title: String, handler: AlertButtonAction? = nil) -> UIViewController {
-        chainableAlert?.destructiveButton(title, handler: handler)
+        let _ = chainableAlert?.destructiveButton(title, handler: handler)
         return self
     }
     
@@ -91,7 +91,7 @@ public extension UIViewController {
      Add a cancel button to the alert, the most number of cancel button is 1
      */
     public func cancleButton(_ title: String, handler: AlertButtonAction? = nil) -> UIViewController {
-        chainableAlert?.cancleButton(title, handler: handler)
+        let _ = chainableAlert?.cancleButton(title, handler: handler)
         return self
     }
     
@@ -99,7 +99,7 @@ public extension UIViewController {
      Add a textField to the alert, if is action sheet, no use.
      */
     public func textField(configuration: AlertTextFieldConfigurationHandler? = nil) -> UIViewController {
-        chainableAlert?.textField(configuration: configuration)
+        let _ = chainableAlert?.textField(configuration: configuration)
         return self
     }
     

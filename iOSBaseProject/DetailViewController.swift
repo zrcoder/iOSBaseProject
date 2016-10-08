@@ -19,7 +19,7 @@ class DetailViewController: BaseViewController {
     }
     
     override func backButtonTapped() {
-        navigationController?.popToRootViewController(animated: true)
+        let _ = navigationController?.popToRootViewController(animated: true)
     }
 
 }
