@@ -12,9 +12,4 @@ public extension Equatable {
     public func isIn(_ collection: Self...) -> Bool {
         return collection.contains(self)
     }
-    /*
-    public func isIn<T: SequenceType where T.Generator.Element: Equatable>(collection: T) -> Bool {
-        return collection.contains(self)
-    }
-    */
 }

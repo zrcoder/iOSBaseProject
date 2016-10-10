@@ -68,7 +68,7 @@ public struct Http {
             var request = URLRequest(url: url)
             request.timeoutInterval = timeout
             request.httpMethod = method.rawValue;
-            if let parData = dataWithJSON(parameters as AnyObject?) {
+            if let parData = data(with: parameters as AnyObject?) {
                 request.httpBody = parData
             }
             
@@ -82,7 +82,7 @@ public struct Http {
                         return
                     }
                     
-                    if let dictionary = JSONWithData(data) {
+                    if let dictionary = JSON(with: data) {
                         completion(nil, dictionary as? [String : AnyObject])
                     } else {
                         let hint = "can't parse response data -> dictionary"
@@ -107,7 +107,7 @@ public struct Http {
  - returns: e.g. "https://www.test.com?key=value"
  */
 public func combinedString(_ URLString: String, parameters: [String: AnyObject]?) -> String {
-    let parString = stringWithJSON(parameters as AnyObject?)
+    let parString = string(with: parameters as AnyObject?)
     var urlString = URLString
     if urlString.hasSuffix("/") {
         urlString = urlString[0...urlString.length - 2]

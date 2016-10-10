@@ -11,8 +11,8 @@ import Foundation
 /**
  Parse JSON (Array, Dictionary...) to NSData
  */
-public func dataWithJSON(_ object:AnyObject?) -> Data? {
-    if let object = object {
+public func data(with JSON:AnyObject?) -> Data? {
+    if let object = JSON {
         do {
             let data = try JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions())
             return data
@@ -26,7 +26,7 @@ public func dataWithJSON(_ object:AnyObject?) -> Data? {
 /**
  Parse NSData to JSON (Array, Dictionary...)
  */
-public func JSONWithData(_ data:Data?) -> AnyObject? {
+public func JSON(with data:Data?) -> AnyObject? {
     if let data = data {
         do {
             let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
@@ -42,7 +42,7 @@ public func JSONWithData(_ data:Data?) -> AnyObject? {
 /**
  Parse NSData to String
  */
-public func stringWithData(_ data:Data?) -> String? {
+public func string(with data:Data?) -> String? {
     if let data = data {
         return String(data: data, encoding: String.Encoding.utf8)
     }
@@ -52,7 +52,7 @@ public func stringWithData(_ data:Data?) -> String? {
 /**
  Parse String to NSData
  */
-public func dataWithString(_ string:String?) -> Data? {
+public func data(with string:String?) -> Data? {
     if let string = string {
         return string.data(using: String.Encoding.utf8)
     }
@@ -62,15 +62,15 @@ public func dataWithString(_ string:String?) -> Data? {
 /**
  Parse String to JSON (Array, Dictionary...)
  */
-public func JSONWithString(_ string:String?) -> AnyObject? {
-    let data = dataWithString(string)
-    return JSONWithData(data)
+public func JSON(with string:String?) -> AnyObject? {
+    let stringData = data(with: string)
+    return JSON(with: stringData)
 }
 
 /**
  Parse JSON (Array, Dictionary...) to String
  */
-public func stringWithJSON(_ object:AnyObject?) -> String? {
-    let data = dataWithJSON(object)
-    return stringWithData(data)
+public func string(with JSON:AnyObject?) -> String? {
+    let jsonData = data(with: JSON)
+    return string(with: jsonData)
 }
