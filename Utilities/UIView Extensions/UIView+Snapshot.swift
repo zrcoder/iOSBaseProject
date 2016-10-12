@@ -18,6 +18,7 @@ public extension UIView {
             UIGraphicsEndImageContext()
             return image
         }
+        UIGraphicsEndImageContext()
         return nil        
     }
 }

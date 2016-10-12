@@ -61,7 +61,7 @@ public struct Http {
         
         if let url = URL(string: absolutePath) {
             
-            // You can implement with Apple's native api such as NSURLSession or some third library such as Alamofire
+            // You can implement with Apple's native api such as URLSession or some third library such as Alamofire
             
             //  Used Apple's native api here
             
@@ -72,7 +72,7 @@ public struct Http {
                 request.httpBody = parData
             }
             
-            dLog(combinedString(absolutePath, parameters: parameters))
+            dLog(combinedString(with: absolutePath, parameters: parameters))
             
             let session = URLSession.shared
             let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
@@ -106,7 +106,7 @@ public struct Http {
  - parameter parameters: e.g. ["key": "value"]
  - returns: e.g. "https://www.test.com?key=value"
  */
-public func combinedString(_ URLString: String, parameters: [String: AnyObject]?) -> String {
+public func combinedString(with URLString: String, parameters: [String: AnyObject]?) -> String {
     let parString = string(with: parameters as AnyObject?)
     var urlString = URLString
     if urlString.hasSuffix("/") {
