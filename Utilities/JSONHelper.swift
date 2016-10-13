@@ -34,7 +34,6 @@ public func JSON(with data:Data?) -> AnyObject? {
         } catch let error as NSError {
             dLog("NSData->JSON failed:\(error)")
         }
-        
     }
     return nil
 }
