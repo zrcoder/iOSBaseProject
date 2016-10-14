@@ -37,7 +37,7 @@ class BaseViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    fileprivate var leftBarButtonItems: [UIBarButtonItem] {
+    fileprivate lazy var leftBarButtonItems: [UIBarButtonItem] = {
         let button = UIButton(type: .custom)
         button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         button.setImage(UIImage(named: BaseStyle.backButtonImageName), for: UIControlState())
@@ -46,6 +46,6 @@ class BaseViewController: UIViewController {
         let spacerItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         spacerItem.width = -18;
         return [spacerItem, buttonItem]
-    }
+    }()
     
 }

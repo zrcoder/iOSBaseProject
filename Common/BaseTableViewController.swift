@@ -30,7 +30,8 @@ class BaseTableViewController: BaseViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
     }
 
-    // MARK: - Table view data source. Warning:subclass should reimplement them
+    // MARK: - Table view data source.
+    // Warning: - subclass should reimplement them.
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 0
