@@ -93,6 +93,21 @@ public extension Float {
         return Float.random(0, self)
     }
 }
+public extension Array {
+    /// a random item in array
+    public var randomItem: Element {
+        let index = Int(arc4random_uniform(UInt32(self.count)))
+        return self[index]
+    }
+}
+
+public extension ArraySlice {
+    /// a random item in array slice
+    public var randomItem: Element {
+        let index = Int.random(self.startIndex, self.endIndex - 1)
+        return self[index]
+    }
+}
 
 public extension CGFloat {
     /**
@@ -133,19 +148,3 @@ public extension CGPoint {
     }
 }
 
-
-public extension Array {
-    /// a random item in array
-    public var randomItem: Element {
-        let index = Int(arc4random_uniform(UInt32(self.count)))
-        return self[index]
-    }
-}
-
-public extension ArraySlice {
-    /// a random item in array slice
-    public var randomItem: Element {
-        let index = Int.random(self.startIndex, self.endIndex - 1)
-        return self[index]
-    }
-}
