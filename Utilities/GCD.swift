@@ -17,10 +17,12 @@ public var gcdMainQueue: DispatchQueue {
     return DispatchQueue.main
 }
 
+public func run(after seconds: Int, queue: DispatchQueue = DispatchQueue.main, action: @escaping ()->()) {
+    let time = DispatchTime.now() + .seconds(seconds)
+    queue.asyncAfter(deadline: time, execute: action)
+}
 
 public func run(after seconds: Double, queue: DispatchQueue = DispatchQueue.main, action: @escaping ()->()) {
-    
     let time = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-    queue.asyncAfter(deadline: time, execute: action)
-    
+    queue.asyncAfter(deadline: time, execute: action)    
 }

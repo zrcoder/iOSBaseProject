@@ -13,6 +13,9 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dLog("Hello, world!")
+        run(after: 2.5) {
+            log("Glad to see you again!")
+        }
     }
 
     override func didReceiveMemoryWarning() {
