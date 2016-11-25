@@ -15,6 +15,7 @@ public extension String {
         let index = characters.index(startIndex, offsetBy: index)
         return self[index]
     }
+    
     /// Cut string from range
     public subscript(range: CountableClosedRange<Int>) -> String {
         let start = characters.index(startIndex, offsetBy: range.lowerBound)
@@ -29,6 +30,16 @@ public extension String {
         let range = start..<end
         return self[range]
     }
+    
+    /// Cut string from an integer index
+    public func sub(from index: Int) -> String {
+        return substring(from: self.index(startIndex, offsetBy: index))
+    }
+    /// Cut string to an interger index
+    public func sub(to index: Int) -> String {
+        return substring(to: self.index(endIndex, offsetBy: index-characters.count + 1))
+    }
+    
     /// Position of begining character of substing
     public func indexOf(_ subString: String, caseInsensitive: Bool = false, fromEnd: Bool = false) -> Int {
         if subString.isEmpty {
