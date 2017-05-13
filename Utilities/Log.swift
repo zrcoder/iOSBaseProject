@@ -23,10 +23,8 @@ public func log(_ message: Any) {
  */
 public func dLog(_ message: Any? = nil, file: String = #file, line: Int = #line, function: String = #function) {
     if isDebug {
+        print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛")
         if let message = message {
-            print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛 \n\(message)")
-        } else {
-            print("⭐️\((file as NSString).lastPathComponent)🔸\(line) 🌜\(function)🌛")
-        }
-    }
+            print("\(message)")
+        }    }
 }

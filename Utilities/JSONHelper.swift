@@ -16,7 +16,7 @@ public func data(with JSON:AnyObject?) -> Data? {
         do {
             let data = try JSONSerialization.data(withJSONObject: object, options: JSONSerialization.WritingOptions())
             return data
-        } catch let error as NSError {
+        } catch {
             dLog("JSON->NSData failed:\(error)")
         }
     }
@@ -31,7 +31,7 @@ public func JSON(with data:Data?) -> AnyObject? {
         do {
             let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
             return object as AnyObject?
-        } catch let error as NSError {
+        } catch {
             dLog("NSData->JSON failed:\(error)")
         }
     }
